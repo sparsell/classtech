@@ -1,3 +1,3 @@
-class Device 
+class Device < ActiveRecord::Base
 
 end
