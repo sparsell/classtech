@@ -7,6 +7,8 @@ end
 #mount other controller with key work 'use'
 
 #send PATCH and DELETE requests (sinatra middleware)
-'use Rack::MethodOverride'
+use Rack::MethodOverride
+run ApplicationController
+
 
 run ApplicationController
