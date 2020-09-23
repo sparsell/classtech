@@ -7,4 +7,6 @@ thomas = User.create(name: "Thomas", email: "thomas.parsell@icloud.com")
 bobby = User.create(name: "Bobby", email: "bobby@icloud.com")
 
 
-device = Device.create(type: "ipad", limit: "yes", can_text: "yes")
+device = Device.create(device_type: "ipad", limit: true, can_text: true)
+device1 = Device.create(device_type: "iphone", limit: true, can_text: true)
+device2 = Device.create(device_type: "macbook", limit: true, can_text: true)
