@@ -1,5 +1,14 @@
 /* font-family: 'Allerta Stencil', sans-serif; */
 
+.wrapper .home-page {
+  display: flex;
+  flex-direction: column;
+  padding: 100px;
+  color: linen;
+  background: darkcyan;
+}
+
+
 
 @media screen {
   /* --- Reset Styles --- */
