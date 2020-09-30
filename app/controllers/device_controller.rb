@@ -1,0 +1,3 @@
+class DeviceController < ApplicationController
+
+end
