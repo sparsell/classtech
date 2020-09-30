@@ -8,5 +8,9 @@ end
 
 #send PATCH and DELETE requests (sinatra middleware)
 use Rack::MethodOverride
+use ChildController
+use GradeController
+use UserController
+use DeviceController
 run ApplicationController
 
