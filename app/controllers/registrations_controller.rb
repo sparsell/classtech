@@ -1,18 +1,21 @@
 class RegistrationsController < ApplicationController
 
     get '/registrations/signup' do
-        'render signup form'
-        # erb :'/registrations/signup'
+        #render signup form
+        erb :'/registrations/signup'
     end 
     
     post '/registrations' do
-    #gets the new user's info from params hash
-    #create a new user
-    #signs them in
-    #redirects them 
-    @user = User.create(username: params[:username], email: params[:email], password: params[:password])
-    session[:id] = @user.id
-    redirect '/user/profile'
+    @user = User.new(name: params["name"], email: params["email"], password: params["password"])
+        if @user.save #will return false if the password is not filled in
+        redirect '/sessions/login'
+        else
+        redirect '/registrations/failures'
+        end
+    end
+
+    get '/registrations/failures' do
+    erb :'registrations/failures'
     end
 
 end
