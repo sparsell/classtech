@@ -5,14 +5,16 @@ class SessionsController < ApplicationController
         erb :'/sessions/login'
     end
 
-    post '/sessions' do
+    post '/sessions' do #from login form params hash
      #gets user info from params hash
         #matches agains the existing entries in db
         #if matching, signs in, or else redirect to signup
         @user = User.find_by(name: params["name"])
-        if @user != nil && user.password_digest = params["password_digest"]
+        if @user != nil && @user.password = params["password"]
         session[:id] = @user.id
         redirect to '/users/:id'
+        else
+            redirect to '/sessions/login'
         end
     end
 
