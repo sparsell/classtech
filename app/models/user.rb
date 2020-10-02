@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+    has_secure_password
     has_many :children
     # has_many :devices, :through => :children
     # belongs_to :grade, :through => :children
