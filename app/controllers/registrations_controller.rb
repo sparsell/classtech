@@ -7,7 +7,6 @@ class RegistrationsController < ApplicationController
     
     post '/registrations' do
     @user = User.new(name: params[:name], password: params[:password])
-    binding.pry
         if @user.save #will return false if the password is not filled in
             
             redirect '/sessions/login'
