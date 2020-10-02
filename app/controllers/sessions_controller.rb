@@ -9,9 +9,11 @@ class SessionsController < ApplicationController
      #gets user info from params hash
         #matches agains the existing entries in db
         #if matching, signs in, or else redirect to signup
-        @user = User.find_by(username: params[:username], email: params[:email], password: params[:password])
+        @user = User.find_by(name: params["name"])
+        if @user != nil && user.password_digest = params["password_digest"]
         session[:id] = @user.id
-        redirect '/user/profile'
+        redirect to '/users/:id'
+        end
     end
 
     get '/sessions/logout' do
