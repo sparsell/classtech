@@ -6,26 +6,23 @@
 </head>
 
 <body>
-  <div class="wrapper">
-    <div class="home-page-block">
-   
-      <div class="logo">
-        <h1>Class Tech</h1>
-      </div>
-    </div>
 
     <div class="display-grade">
-        <h2>Grade: </h2>
-   
-      </div>
+        <h3>View the tech in your class by grade</h3>
 
-      
-      <br>
-    <div class="nav-links">
-      <a href="/">Home</a>
-      <a href="/sessions/logout">Logout</a>
+        <form action="grades" method="POST">
+          <label for="grades">Choose a grade:</label>
+          <select id="grades" name="grades">
+            <option value="grade_3">Grade 3</option>
+            <option value="grade_4">Grade 4</option>
+            <option value="grade_5">Grade 5</option>
+            <option value="grade_6">Grade 6</option>
+            <option value="grade_7">Grade 7</option>
+            <option value="grade_8">Grade 8</option>
+          </select>
+          <input type="Submit">
+        </form>
     </div>
-
-      </div>
-  </body>
+  </div> 
+</body>
 </html>

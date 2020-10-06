@@ -6,4 +6,9 @@ class GradeController < ApplicationController
         erb :'grades/index'
     end
 
+    post '/grades' do
+        @grade = Grade.all(grade: params)
+        erb :'grades/show'
+    end
+
 end
