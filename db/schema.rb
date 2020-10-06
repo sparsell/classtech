@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200930095219) do
+ActiveRecord::Schema.define(version: 20201006173846) do
 
   create_table "children", force: :cascade do |t|
     t.string "name"
@@ -23,6 +23,11 @@ ActiveRecord::Schema.define(version: 20200930095219) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.string   "device_type"
+    t.integer  "child_id"
+    t.boolean  "soc_media"
+    t.boolean  "play_games"
+    t.boolean  "can_chat"
+    t.boolean  "watch_yt"
   end
 
   create_table "grades", force: :cascade do |t|
