@@ -57,7 +57,7 @@ html, body {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-flow: row wrap;
+  flex-flow: column wrap;
 
   /* background: rgba(13,12,80,0.86);  */
 }
@@ -103,14 +103,14 @@ a {
   padding: 50px;
 }
 
-.form {
+form {
   display: block;
   color: rgba(158,255,197,1);
  
 }
 
 input {
-  width:50%;
+  /* width:50%; */
   margin: 2px;
   /* background-color: rgba(158,255,197,1); */
 }
@@ -120,8 +120,20 @@ input {
   margin: 15px;
 }
 
+/* PROFILE PAGE ================== */
 
+.display-profile {
+ color: rgba(13,12,80,0.86);
+  margin: 5px;
+  padding: 15px;
+}
 
+a {
+  padding: 2px;
+  font-size: .7em;
+  background-color: rgba(158,255,197,1);
+  /* background-color: rgba(13,12,80,0.86); */
+}
 @media screen and (max-width: 600px) {
   .wrapper {
     -moz-box-shadow: none;

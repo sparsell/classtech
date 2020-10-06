@@ -14,9 +14,20 @@
     <link rel="stylesheet" href="/stylesheets/main.css" />
   </head>
   <body>
+  
     <div class="wrapper">
+    <div class="home-page-block">
+      <div class="logo">
+        <h1>Class Tech</h1>
+      </div>
+    </div>
 
         <%= yield %>
+
+        <div class="nav-links">
+          <a href="/">Home</a>
+          <a href="/sessions/logout">Logout</a>
+        </div>
 
       <footer class="branding">
         <small>&copy; 2020 <strong>Classtech</strong></small>

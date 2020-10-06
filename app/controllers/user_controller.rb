@@ -9,6 +9,5 @@ class UserController < ApplicationController
         erb :'users/profile'
     end
 
-   
 
 end
