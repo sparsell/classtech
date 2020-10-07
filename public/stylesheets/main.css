@@ -77,16 +77,19 @@ html, body {
 }
 
 .sign-up-links {
-  padding: 2em;
-  margin: 2em;
+  display: flex;
+  justify-content: center;
+  align-items: column;
+  flex-flow: row wrap;
+  margin: 12px;
+  
 }
 
 a {
-  padding: 1em;
-  color: black;
-  border: rgba(158,255,197,1) 2px solid;
   text-decoration: none;
-  background-color:rgba(158,255,197,1);
+  margin: .5em;
+  padding: 2em;
+  border: rgba(13,12,80,0.86) 2px solid;
 }
 
 .credit {
@@ -105,7 +108,7 @@ a {
 
 form {
   display: block;
-  color: rgba(158,255,197,1);
+  color: rgba(13,12,80,0.86);
  
 }
 
@@ -129,7 +132,7 @@ input {
 }
 
 a {
-  padding: 2px;
+  /* padding: 2px; */
   font-size: .7em;
   background-color: rgba(158,255,197,1);
   /* background-color: rgba(13,12,80,0.86); */
