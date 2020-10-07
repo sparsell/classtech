@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
         #if matching, signs in, or else redirect to signup
         @user = User.find_by(name: params[:user_name])
         if @user != nil && @user.password == params["password"]
-        session[:id] = @user.id
+        session[:user_id] = @user.id
         redirect "/users/#{@user.id}"
         
         else
@@ -21,7 +21,7 @@ class SessionsController < ApplicationController
     get '/sessions/logout' do
     #clear the session hash
     session.clear
-    redirect '/'
+    erb :'sessions/logout'
     end
 
 end

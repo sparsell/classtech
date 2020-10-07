@@ -1,32 +1,43 @@
 <DOCTYPE! html>
+
 <head>
 <link href="https://fonts.googleapis.com/css2?family=Allerta+Stencil&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="./public/stylesheets/main.css">
-
 </head>
 
 <body>
+  <div class="wrapper">
     <div class="home-page-block">
-
+   
       <div class="logo">
-        <h2>Class Tech</h2>
+        <h1>Class Tech</h1>
       </div>
     </div>
 
-  <div>
-  <h3>You must <a href='/sessions/login'>Login</a> to see your child's profile.</h3>
-  </div>
+    <h3>Hello, <%=@user.name%>.</h3>
+    <br>
+    <br>
 
+    <div class="display-profile">
+    <h4>Your child:</h4>
+   
+      <p><%= @user.id%></p> 
 
+      </div>
 
-  <div>
-  <a href='/sessions/logout'>Log Out</a> 
-  </div>
+      <form action="children" method="POST">
+      <input type="submit" name="add_child" id="add_child" value="Add Your Child">
+      </form>
 
-  <div>
-  <a href='/'>Home</a> 
-  </div>
+      <form action="children" method="POST">
+      <input type="submit" name="edit_child" id="edit_child" value="Edit Your Child">
+      </form>
+      <br>
+    <div class="nav-links">
+      <a href="/">Home</a>
+      <a href="/sessions/logout">Logout</a>
+    </div>
 
-
+      </div>
   </body>
 </html>
