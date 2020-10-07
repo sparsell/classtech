@@ -11,10 +11,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20201007101621) do
+ActiveRecord::Schema.define(version: 20201007102935) do
 
   create_table "children", force: :cascade do |t|
-    t.string "name"
+    t.string  "name"
+    t.integer "user_id"
+    t.integer "grade_id"
   end
 
   create_table "devices", force: :cascade do |t|
@@ -32,8 +34,6 @@ ActiveRecord::Schema.define(version: 20201007101621) do
 
   create_table "grades", force: :cascade do |t|
     t.integer "grade"
-    t.integer "child_id"
-    t.integer "device_id"
   end
 
   create_table "users", force: :cascade do |t|
