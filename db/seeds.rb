@@ -13,6 +13,15 @@ grace = Child.create(name: "Grace", user_id: lauren.id)
 audrey = Child.create(name: "Audrey", user_id: mk.id)
 leila = Child.create(name: "Leila", user_id: aya.id)
 
+    Device.create(name: "iPad")
+    Device.create(name: "iPhone")
+    Device.create(name: "Android phone")
+    Device.create(name: "Chromebook")
+    Device.create(name: "iPod")
+    Device.create(name: "Tablet")
+    Device.create(name: "MacBook")
+    Device.create(name: "PC")
+    Device.create(name: "Desktop")
     Device.create(device_type: "iPad")
     Device.create(device_type: "Chromebook")
     Device.create(device_type: "iPhone")
@@ -20,6 +29,17 @@ leila = Child.create(name: "Leila", user_id: aya.id)
     Device.create(device_type: "MacBook")
     Device.create(device_type: "PC")
     
+    t.boolean  "limit"
+    t.boolean  "can_text"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.string   "device_type"
+    t.integer  "child_id"
+    t.boolean  "soc_media"
+    t.boolean  "play_games"
+    t.boolean  "can_chat"
+    t.boolean  "watch_yt"
+
     
     Grade.create(grade: 3)
     Grade.create(grade: 4)
