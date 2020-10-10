@@ -1,1 +1,20 @@
-"test"
+<!DOCTYPE html>
+
+<head>
+<link href="https://fonts.googleapis.com/css2?family=Allerta+Stencil&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./public/stylesheets/main.css">
+</head>
+
+<body>
+
+    <h2>Add your child:</h2>
+ 
+        <form action="/children" method="POST">
+            <label for="name">Name:</label>
+            <br>
+            <input type="text" name="child[name]" id="name">
+ 
+            <input type="submit" value="Add Child">
+        </form>
+</body>
+</html>        

@@ -1,11 +1,11 @@
 class UserController < ApplicationController
 
-    get '/users/profile' do
-        erb :'users/profile'
+    get '/users' do
+        erb :'index'
     end
     
     get '/users/:id' do 
-        @user = User.find(params[:user_id])
+        @user = User.find(params[:id])
         erb :'users/profile'
     end
 

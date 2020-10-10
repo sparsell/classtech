@@ -8,29 +8,19 @@
 <body>
 
     <h3>Hello, <%=@user.name%>.</h3>
+    
+    <h3>You have <%=@user.children.size%> child/ren registered in our system.</h3>
+    
+
+    <div class="action-buttons">
+      
+      <a href="/children/#{@user.id}">Create your child's profile</a>
     <br>
-    <br>
+      <a href="/children/show">View your child's profile</a>
 
-    <div class="display-profile">
-    <h4>Your child:</h4>
-   
-      <p><%= @user.id%></p> 
-
-      </div>
-
-      <form action="children" method="POST">
-      <input type="submit" name="add_child" id="add_child" value="Add Your Child">
-      </form>
-
-      <form action="children" method="POST">
-      <input type="submit" name="edit_child" id="edit_child" value="Edit Your Child">
-      </form>
-      <br>
-    <div class="nav-links">
-      <a href="/">Home</a>
-      <a href="/sessions/logout">Logout</a>
     </div>
 
-      </div>
+      <br>
+  
   </body>
 </html>

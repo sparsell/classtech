@@ -22,6 +22,12 @@ leila = Child.create(name: "Leila", user_id: aya.id)
     Device.create(name: "MacBook")
     Device.create(name: "PC")
     Device.create(name: "Desktop")
+    Device.create(device_type: "iPad")
+    Device.create(device_type: "Chromebook")
+    Device.create(device_type: "iPhone")
+    Device.create(device_type: "iPod")
+    Device.create(device_type: "MacBook")
+    Device.create(device_type: "PC")
     
     t.boolean  "limit"
     t.boolean  "can_text"
