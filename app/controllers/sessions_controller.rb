@@ -20,7 +20,7 @@ class SessionsController < ApplicationController
         
         # else
         #     redirect '/sessions/login'
-        # end
+        end
     end
 
     get '/success' do
