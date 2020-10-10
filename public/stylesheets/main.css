@@ -82,18 +82,18 @@ html, body {
   align-items: column;
   flex-flow: row wrap;
   margin: 12px;
-  
 }
 
 a {
   text-decoration: none;
-  margin: .5em;
-  padding: 2em;
-  border: rgba(13,12,80,0.86) 2px solid;
+  /* margin: .5em; */
+  /* padding: 2em; */
+  /* border: rgba(13,12,80,0.86) 2px solid; */
 }
 
-.credit {
-  font-size: .5em;
+.message {
+  margin: 12em;
+  width: 100%;
 }
 
 /* SIGNUP PAGE styles */
@@ -109,13 +109,13 @@ a {
 form {
   display: block;
   color: rgba(13,12,80,0.86);
- 
 }
 
 input {
-  /* width:50%; */
-  margin: 2px;
-  /* background-color: rgba(158,255,197,1); */
+  display: inline;
+  margin: 12px;
+  font-size: 1em;
+  
 }
 
 #submit {
@@ -131,11 +131,13 @@ input {
   padding: 15px;
 }
 
+.action-buttons {
+  display: inline;
+}
+
 a {
-  /* padding: 2px; */
   font-size: .7em;
   background-color: rgba(158,255,197,1);
-  /* background-color: rgba(13,12,80,0.86); */
 }
 @media screen and (max-width: 600px) {
   .wrapper {

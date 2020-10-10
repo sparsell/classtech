@@ -9,30 +9,17 @@ class SessionsController < ApplicationController
         #matches agains the existing entries in db
         #if matching, signs in, or else redirect to signup
         @user = User.find_by(user_name: params[:user_name])
+        
         if @user && @user.authenticate(params[:password])
             session[:user_id] = @user.id
-            redirect "/sessions/success"
+           
+            redirect "/users/#{@user.id}"
         else
-            redirect '/sessions/failure'
-        # if @user != nil && @user.password == params["password"]
-        # session[:user_id] = @user.id
-        # redirect "/users/#{@user.id}"
-        
-        # else
-        #     redirect '/sessions/login'
-        # end
-    end
-
-    get '/success' do
-        if logged_in?
-            erb :"/users/#{@user.id}"
-        else
-            redirect 'sessions/login'
+            redirect '/sessions/login'
         end
     end
 
     get '/sessions/logout' do
-    #clear the session hash
     session.clear
     erb :'sessions/logout'
     end

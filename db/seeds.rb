@@ -13,12 +13,12 @@ grace = Child.create(name: "Grace", user_id: lauren.id)
 audrey = Child.create(name: "Audrey", user_id: mk.id)
 leila = Child.create(name: "Leila", user_id: aya.id)
 
-    Device.create(name: "iPad")
-    Device.create(name: "Chromebook")
-    Device.create(name: "Chromebook")
-    Device.create(name: "Chromebook")
-    Device.create(name: "Chromebook")
-    Device.create(name: "Chromebook")
+    Device.create(device_type: "iPad")
+    Device.create(device_type: "Chromebook")
+    Device.create(device_type: "iPhone")
+    Device.create(device_type: "iPod")
+    Device.create(device_type: "MacBook")
+    Device.create(device_type: "PC")
     
     
     Grade.create(grade: 3)
