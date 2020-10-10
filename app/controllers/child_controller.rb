@@ -9,7 +9,7 @@ class ChildController < ApplicationController
   end 
 
   get '/children/:id' do
-    @device = Device.find_by(params[:id])
+   
     erb :'children/show' 
   end 
   
