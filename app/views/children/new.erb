@@ -13,13 +13,21 @@
             <label for="name">Name:</label>
             <input type="text" name="child[name]" id="name">
             <br>
-            <label for="grade">Grade:</label>
+            <br>
+            <label for="grade">Grade (choose one):</label>
+            <br>
             <% @grades.each do |grade| %>
-                <input type="checkbox" name="child[grade_ids][]" id="grade_<%grade.id%>" value="grade.grade">
+                <input type="checkbox" name="child[grade_ids][]" id="grade_<%grade.id%>" value="grade.grade%">
+                <%=grade.grade%>
                 <% end %>
             <br>
+            <br>
             <label for="device">Device(s):</label>
-            <input type="text" name="child[device]" id="device">
+                <br>
+            <% @devices.each do |device| %>
+                <input type="checkbox" name="child[device_ids][]" id="device_<%device.id%>" value="device.device_type">
+                <%= device.device_type%>
+                <% end %>
             <br>
             <input type="submit" value="Add Child">
         </form>
