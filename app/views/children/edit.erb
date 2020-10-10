@@ -10,43 +10,29 @@
 <h2>Update your child's devices</h2>
 
   <form action="/children/<%= @child.id %>" method="POST">
-  
     <input id="hidden" type="hidden" name="_method" value="patch">
     <label>Edit your Child's Name:</label>
-    <br>
+      <br>
     <input type="text" name="child[name]" value="<%= @child.name %>">
+      <br>
 
-    <br>
-    <p>Select an existing device or create a new one below.</p>
+<h2>Select an existing device or create a new one below.</h2>
 
-
-    <h3>Existing Devices</h3>
-    <% @devices.each do |device| %>
+  <h3>Existing Devices</h3>
+      <% @devices.each do |device| %>
       <input type="checkbox" name="child[device_ids][]" id="<%= device.id %>" value="<%= device.id %>" <%='checked' if @child.devices.include?(device) %>><%= device.device_type %></input><br>
-    <% end %>
-    <br>
+      <% end %>
+        <br>
 
-    <h3>New Device</h3>
-    <label>Device Name: </label>
-    <br>
-    <input type="text" name="device[device_type]" id="device_type"></input>
-    <br><br>
-
-    <input type="submit" value="Update Device">
+  <h3>New Device</h3>
+      <label>Device Name: </label>
+        <br>
+      <input type="text" name="device[device_type]" id="device_type"></input>
+        <br>
+        <br>
+      <input type="submit" value="Update Device">
  
-
-  <h3>Existing Devices Limits/Behaviors</h3>
-    <% @devices.each do |device| %>
-      <input type="checkbox" name="child[device_ids][]" id="<%= device.id %>" value="<%= device.id %>" <%='checked' if @child.devices.include?(device) %>><%= device.device_type %></input><br>
-    <% end %>
-    <br>
-
-    <h3>New Device Limits/Behaviors</h3>
-    <label>Device Name: </label>
-    <br>
-    <input type="text" name="device[device_type]" id="device_type"></input>
-    <br><br>
-
-    <input type="submit" value="Update Device Limits/Behaviors">
-  </form> 
+  
+    </form> 
 </body>
+</html>

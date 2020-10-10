@@ -41,6 +41,12 @@ html, body {
     margin-bottom: 1em;
   }
 
+  a {
+  font-size: .7em;
+  background-color: rgba(158,255,197,1);
+  text-decoration: none;
+}
+
   footer.branding {
     /* border-top: 2px solid #ccc; */
     /* margin-top: 20px;
@@ -82,13 +88,6 @@ html, body {
   align-items: column;
   flex-flow: row wrap;
   margin: 12px;
-}
-
-a {
-  text-decoration: none;
-  /* margin: .5em; */
-  /* padding: 2em; */
-  /* border: rgba(13,12,80,0.86) 2px solid; */
 }
 
 .message {
@@ -135,10 +134,6 @@ input {
   display: inline;
 }
 
-a {
-  font-size: .7em;
-  background-color: rgba(158,255,197,1);
-}
 @media screen and (max-width: 600px) {
   .wrapper {
     -moz-box-shadow: none;

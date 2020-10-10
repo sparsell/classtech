@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<DOCTYPE! html>
 
 <head>
 <link href="https://fonts.googleapis.com/css2?family=Allerta+Stencil&display=swap" rel="stylesheet">
@@ -10,31 +10,12 @@
     <div class="display-grade">
         <h3>View the tech in your class by grade</h3>
 
-        <form action="/grades" method="POST">
-          <label for="grades">Choose a grade:</label>
-          <select id="grades" name="grades">
-            <option value="grade_3">Grade 3</option>
-            <option value="grade_4">Grade 4</option>
-            <option value="grade_5">Grade 5</option>
-            <option value="grade_6">Grade 6</option>
-            <option value="grade_7">Grade 7</option>
-            <option value="grade_8">Grade 8</option>
-          </select>
-          <input type="Submit">
-        </form>
-
         <ol>
-        <% @grades.each do |grade|%>
-        <li><a href="/grades/<%= grade.id%>">Grade: <%=grade.grade%></a></li>
-        <% end %>
-    </ol>
+            <% @grades.each do |grade|%>
+            <li><a href="/grades/<%= grade.id%>">Grade: <%=grade.grade%></a></li>
+            <% end %>
+        </ol>
 
-
-
-   
-      
-     
     </div>
-  </div> 
 </body>
 </html>
