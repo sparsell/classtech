@@ -11,13 +11,13 @@
  
         <form action="/children" method="POST">
             <label for="name">Name:</label>
-            <input type="text" name="name" id="name">
+            <input type="text" name="child[:name]" id="name">
             <br>
             <br>
             <label for="grade">Grade (choose one):</label>
             <br>
             <% @grades.each do |grade| %>
-                <input type="checkbox" name="child[grade_ids][]" id="grade_<%grade.id%>" value="grade.grade%">
+                <input type="checkbox" name="child[grade_ids][]" id="grade_<%grade.id%>" value="grade.grade">
                 <%=grade.grade%>
                 <% end %>
             <br>

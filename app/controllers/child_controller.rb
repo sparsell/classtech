@@ -17,6 +17,7 @@ class ChildController < ApplicationController
   
   post '/children' do
     @child = Child.create(:name => params[:name]) 
+  
     redirect to "/children/#{@child.id}"
   end
     
