@@ -7,13 +7,20 @@
 
 <body>
 
-    <h2>Add your child:</h2>
+    <h3>Add your child:</h3>
  
         <form action="/children" method="POST">
             <label for="name">Name:</label>
-                <br>
             <input type="text" name="child[name]" id="name">
- 
+            <br>
+            <label for="grade">Grade:</label>
+            <% @grades.each do |grade| %>
+                <input type="checkbox" name="child[grade_ids][]" id="grade_<%grade.id%>" value="grade.grade">
+                <% end %>
+            <br>
+            <label for="device">Device(s):</label>
+            <input type="text" name="child[device]" id="device">
+            <br>
             <input type="submit" value="Add Child">
         </form>
 </body>

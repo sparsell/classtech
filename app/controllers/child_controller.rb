@@ -5,11 +5,13 @@ class ChildController < ApplicationController
   end
 
   get '/children/new' do
+    @grades = Grade.all
+    @devices = Device.all
     erb :'children/new' 
   end 
 
   get '/children/:id' do
-   
+   @child = Child.find_by(name: params[:name])
     erb :'children/show' 
   end 
   

@@ -135,7 +135,7 @@ input {
 }
 
 .action-buttons {
-  display: block;
+  display: inline-block
 }
 
 @media screen and (max-width: 600px) {
