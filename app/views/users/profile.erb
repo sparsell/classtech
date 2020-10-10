@@ -9,12 +9,15 @@
 
     <h3>Hello, <%=@user.name%>.</h3>
     
-    <h3>You have <%=@user.children.size%> child/ren registered in our system.</h3>
-    
+    <h4>You have <%=@user.children.size%> child/ren registered in our system.</h4>
+        <br>
+        <br>
 
     <div class="action-buttons">
       
-      <a href="/children/#{@user.id}">Create your child's profile</a>
+      <a href="/children/new">Create your child's profile</a>
+    <br>
+    <br>
     <br>
       <a href="/children/#{@user.id}">View your child's profile</a>
 

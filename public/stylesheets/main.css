@@ -2,7 +2,6 @@
 
   /* --- General Styles --- */
 
-  
 * {
   list-style: none;
 }
@@ -12,7 +11,7 @@ html, body {
 }
 
   body {
-    background-color: #fff;
+    background-color: #effeff;
     line-height: 18px;
     font-size: 16px;
   }
@@ -26,13 +25,18 @@ html, body {
   }
 
   h2 {
-    font-size: 2em;
+    font-size: 3em;
     line-height: 1em;
     margin-bottom: 1em;
 
   }
 
   h3 {
+    font-size: 2em;
+    line-height: 1em;
+  }
+
+h4 {
     font-size: 1em;
     line-height: 1em;
   }
@@ -43,14 +47,16 @@ html, body {
 
   a {
   font-size: .7em;
-  background-color: rgba(158,255,197,1);
   text-decoration: none;
+  border: 1px black solid;
+  padding: 1em;
+  margin: 1em;
 }
 
   footer.branding {
-    /* border-top: 2px solid #ccc; */
-    /* margin-top: 20px;
-    padding-top: 20px; */
+    border-top: 2px solid #ccc;
+    margin-top: 20px;
+    padding-top: 20px;
     font-size: .75em;
   }
 
@@ -64,8 +70,6 @@ html, body {
   justify-content: center;
   align-items: center;
   flex-flow: column wrap;
-
-  /* background: rgba(13,12,80,0.86);  */
 }
 
 /* HOME PAGE styles */
@@ -131,7 +135,7 @@ input {
 }
 
 .action-buttons {
-  display: inline;
+  display: block;
 }
 
 @media screen and (max-width: 600px) {
