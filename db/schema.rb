@@ -11,25 +11,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20201007102935) do
+ActiveRecord::Schema.define(version: 20201012183121) do
 
   create_table "children", force: :cascade do |t|
     t.string  "name"
     t.integer "user_id"
     t.integer "grade_id"
+    t.boolean "has_limits"
+    t.boolean "can_text"
+    t.boolean "can_chat"
+    t.boolean "soc_media"
+    t.boolean "play_games"
+    t.boolean "watch_yt"
   end
 
   create_table "devices", force: :cascade do |t|
-    t.boolean  "limit"
-    t.boolean  "can_text"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.string   "device_type"
     t.integer  "child_id"
-    t.boolean  "soc_media"
-    t.boolean  "play_games"
-    t.boolean  "can_chat"
-    t.boolean  "watch_yt"
+    t.boolean  "limits"
   end
 
   create_table "grades", force: :cascade do |t|
