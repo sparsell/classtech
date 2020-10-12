@@ -16,7 +16,7 @@
             <br>
             <label for="grade">Grade (choose one):</label>
             <br>
-            <% @grades.each do |grade| %>
+            <% @grades.each do |grade| %><br>
                 <input type="checkbox" name="child[grade_ids][]" id="grade_<%grade.id%>" value="grade.grade">
                 <%=grade.grade%>
                 <% end %>
@@ -24,7 +24,7 @@
             <br>
             <label for="device">Device(s):</label>
                 <br>
-            <% @devices.each do |device| %>
+            <% @devices.each do |device| %><br>
                 <input type="checkbox" name="child[device_ids][]" id="device_<%device.id%>" value="device.device_type">
                 <%= device.device_type%>
                 <% end %>
