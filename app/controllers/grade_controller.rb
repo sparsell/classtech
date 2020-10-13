@@ -7,8 +7,10 @@ class GradeController < ApplicationController
         erb :'grades/index'
     end
 
-    post '/grades' do
+    get '/grades/:id' do
         @grades = Grade.all
+        @children = Child.all
+        @devices = Device.all
         erb :'grades/show'
     end
 

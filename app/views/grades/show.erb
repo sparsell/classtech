@@ -9,6 +9,13 @@
 
 
     <p>show by grade</p>
+    <!-- iterate over @children and find by grade the user selected from 'grades/index' page -->
+    <!-- iterate over that array of children to list the devices of each child -->
+    <!-- how does grade_id come through from index page?? -->
+    <% @children.select {|grade| grade == %>
+    
+    <% end %>
+
 
 
 </body>

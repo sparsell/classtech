@@ -9,12 +9,14 @@
 
     <div class="display-grade">
         <h3>View the tech in your class by grade</h3>
-
-        <ol>
-            <% @grades.each do |grade|%>
-            <li><a href="/grades/<%= grade.id%>">Grade: <%=grade.grade%></a></li>
-            <% end %>
-        </ol>
+            
+            <form action="/grades/:id" method="POST">
+                <ol>
+                    <% @grades.each do |grade|%>
+                    <li><a href="/grades/<%= grade.id%>">Grade: <%=grade.grade%></a></li>
+                    <% end %>
+                </ol>
+            </form>
 
     </div>
 </body>
