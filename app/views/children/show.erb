@@ -6,10 +6,19 @@
 </head>
 <body>
 
-    <h3><%=@child.name%></h3>
-    <h3><%=@child.user_id%></h3>
+    <h4><%=@child.name%></h4>
 
+    <!--show child's grade by number, not grade.id -->
+    <h4>Grade: <%=@child.grade_id%></h4>
 
+    <h4>Has the following devices:</h4>
+    <!--show child's devices -->
+    <%@child.devices.each do |device|%><br>
+        <%=device.device_type %>
+        <%end%><br><br>
+
+    <a href="/user/profile">Return to your profile page</a>
+    <a href="/grades">View by Grade</a>
 
 </body>
 <html>

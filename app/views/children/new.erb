@@ -11,24 +11,24 @@
  
         <form action="/children" method="POST">
             <label for="name">Name:</label>
-            <input type="text" name="child[:name]" id="name">
-            <br>
-            <br>
-            <label for="grade">Grade (choose one):</label>
-            <br>
-            <% @grades.each do |grade| %><br>
-                <input type="checkbox" name="child[grade_ids][]" id="grade_<%grade.id%>" value="grade.grade">
-                <%=grade.grade%>
-                <% end %>
-            <br>
-            <br>
-            <label for="device">Device(s):</label>
-                <br>
-            <% @devices.each do |device| %><br>
-                <input type="checkbox" name="child[device_ids][]" id="device_<%device.id%>" value="device.device_type">
-                <%= device.device_type%>
-                <% end %>
-            <br>
+                <input type="text" name="child[name]"> <br> <br>
+            
+            <label for="grade">Grade (choose one):</label> <br>
+                <% @grades.each do |grade| %>
+                    <input type="checkbox" name="child[grade_id]" id="grade_<%=grade.id%>" value="<%=grade.id%>">
+                    <%=grade.grade%>
+                <% end %>  <br>  <br>
+           
+            <label for="device">Device(s):</label> <br>
+                <% @devices.each do |device| %>
+                    <input type="checkbox" name="child[device_ids][]" id="<%=device.id%>" value="<%=device.id%>">
+                    <%=device.device_type%>
+                <% end %>  <br>
+
+    <h3>Add a New Device:</h3>
+
+            <input type="text" name="device[device_type]"> <br> <br>
+            
             <input type="submit" value="Add Child">
         </form>
 </body>
