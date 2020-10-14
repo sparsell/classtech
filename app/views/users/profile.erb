@@ -1,26 +1,20 @@
-<DOCTYPE! html>
+<!DOCTYPE html>
 
 <head>
 <link href="https://fonts.googleapis.com/css2?family=Allerta+Stencil&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="./public/stylesheets/main.css">
 </head>
 
 <body>
 
-    <h3>Hello, <%=@user.name%>.</h3>
-    
-    <h4>You have <%=@user.children.size%> child/ren registered in our system.</h4>
+    <h3>Hi, <%=@user.name%>. You have <%=@user.children.size%> child/ren registered in our system.</h3>
         <br>
         <br>
 
     <div class="action-buttons">
-      
-      <a href="/children/new">Create your child's profile</a>
-    <br>
-    <br>
-    <br>
-      <a href="/children/#{@user.id}">View your child's profile</a>
-
+      <a href="/children/new">Add a child</a>
+      <a href="/children/#{@user.id}">View a child</a>
     </div>
 
       <br>
