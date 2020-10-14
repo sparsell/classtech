@@ -20,6 +20,7 @@ class ChildController < ApplicationController
   end
 
   get '/children/:id' do
+    #when a link brings you here there are no params...
    @child = Child.find_by(name: params[:child][:name])
     erb :'children/show' 
   end 

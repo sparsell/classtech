@@ -1,4 +1,4 @@
-<DOCTYPE! html>
+<!DOCTYPE html>
 
 <head>
 <link href="https://fonts.googleapis.com/css2?family=Allerta+Stencil&display=swap" rel="stylesheet">
@@ -6,10 +6,9 @@
 </head>
 
 <body>
-
-    <h3>Add your child:</h3>
+    <form action="/children" method="POST">
+        <h3>Add your child:</h3>
  
-        <form action="/children" method="POST">
             <label for="name">Name:</label>
                 <input type="text" name="child[name]"> <br> <br>
             
@@ -19,17 +18,16 @@
                     <%=grade.grade%>
                 <% end %>  <br>  <br>
            
-            <label for="device">Device(s):</label> <br>
+            <label for="device">Select all your child's devices: (If you don't see it, add a new one below.)</label> <br>
                 <% @devices.each do |device| %>
                     <input type="checkbox" name="child[device_ids][]" id="<%=device.id%>" value="<%=device.id%>">
                     <%=device.device_type%>
                 <% end %>  <br>
 
-    <h3>Add a New Device:</h3>
-
+        <h4>Add a New Device:</h4>
+            <label for="device_type">Device Name:</label>
             <input type="text" name="device[device_type]"> <br> <br>
-            
             <input type="submit" value="Add Child">
-        </form>
+    </form>
 </body>
 </html>        

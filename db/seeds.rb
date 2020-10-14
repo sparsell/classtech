@@ -1,9 +1,9 @@
 #seed data to test program
-sonja = User.create(name: "Sonja", user_name: "redsonja", password: "pw")
+sonja = User.create(name: "Sonja", user_name: "sonja", password: "pw")
 mas = User.create(name: "Mas", user_name: "mrsj", password: "pw")
-lauren = User.create(name: "Lauren", user_name: "bumby", password: "pw")
-mk = User.create(name: "Mary Kate", user_name: "mk2002", password: "pw")
-aya = User.create(name: "Aya", user_name: "dmj", password: "pw")
+lauren = User.create(name: "Lauren", user_name: "lauren", password: "pw")
+mk = User.create(name: "Mary Kate", user_name: "mk", password: "pw")
+aya = User.create(name: "Aya", user_name: "aya", password: "pw")
 
 charlotte = Child.create(name: "Charlotte", user_id: sonja.id)
 thomas = Child.create(name: "Thomas", user_id: sonja.id)

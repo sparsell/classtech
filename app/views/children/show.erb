@@ -1,24 +1,27 @@
-<DOCTYPE! html>
+<!DOCTYPE html>
 
 <head>
 <link href="https://fonts.googleapis.com/css2?family=Allerta+Stencil&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="./public/stylesheets/main.css">
 </head>
 <body>
+    <div class="display-child">
+        <h3><%=@child.name%></h3><br>
 
-    <h4><%=@child.name%></h4>
+        <!--show child's grade by number, not grade.id -->
+        <h3>Grade:  <%=@child.grade_id%></h3><br>
 
-    <!--show child's grade by number, not grade.id -->
-    <h4>Grade: <%=@child.grade_id%></h4>
+        <h3>Has the following devices:</h3>
+        <!--show child's devices -->
+            <%@child.devices.each do |device|%><br>
+            <h3><%=device.device_type %></h3>
+            <%end%><br><br>
+    </div>
 
-    <h4>Has the following devices:</h4>
-    <!--show child's devices -->
-    <%@child.devices.each do |device|%><br>
-        <%=device.device_type %>
-        <%end%><br><br>
-
-    <a href="/user/profile">Return to your profile page</a>
-    <a href="/grades">View by Grade</a>
+    <div class="action-buttons">
+        <a href="/users/#{@child.user_id}">Return to your profile page</a>
+        <a href='/grades'>View by Grade</a>
+    </div>
 
 </body>
 <html>

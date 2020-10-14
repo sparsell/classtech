@@ -13,16 +13,18 @@
 
 ActiveRecord::Schema.define(version: 20201012183121) do
 
+
+  # I think the 'behaviors' should be their own class
   create_table "children", force: :cascade do |t|
     t.string  "name"
     t.integer "user_id"
     t.integer "grade_id"
-    t.boolean "has_limits"
-    t.boolean "can_text"
-    t.boolean "can_chat"
-    t.boolean "soc_media"
-    t.boolean "play_games"
-    t.boolean "watch_yt"
+    t.boolean "has_limits" #behavior
+    t.boolean "can_text"  #behavior
+    t.boolean "can_chat"  #behavior
+    t.boolean "soc_media" #behavior
+    t.boolean "play_games"  #behavior
+    t.boolean "watch_yt"  #behavior
   end
 
   create_table "devices", force: :cascade do |t|

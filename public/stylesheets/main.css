@@ -1,76 +1,93 @@
 /* font-family: 'Allerta Stencil', sans-serif; */
+/* font-family: 'Dosis', sans-serif; */
 
   /* --- General Styles --- */
 
 * {
   list-style: none;
+  text-decoration: none;
 }
 
 html, body {
-  font-family: 'Allerta Stencil', sans-serif;
+  font-family: 'Dosis', sans-serif;
+  color: #3d405b;
 }
 
-  body {
-    background-color: #effeff;
+body {
+    background-color:#3d405b;
     line-height: 18px;
     font-size: 16px;
   }
 
-  h1 {
+h1 {
     font-size: 5em;
     line-height: 1em;
-    color: rgb(224, 158, 255);
+    color: #087e8b;
+    font-family: 'Allerta Stencil', sans-serif;
+    /* color: rgb(224, 158, 255); */
     margin: 0;
     padding: 0;
   }
 
-  h2 {
+h2 {
     font-size: 3em;
     line-height: 1em;
     margin-bottom: 1em;
+    font-family: 'Dosis', sans-serif;
 
   }
 
-  h3 {
-    font-size: 2em;
+h3 {
+    font-size: 1.75em;
     line-height: 1em;
+    font-family: 'Dosis', sans-serif;
+  
   }
 
 h4 {
     font-size: 1em;
-    line-height: 1em;
+    line-height: 1.5em;
+    font-family: 'Dosis', sans-serif;
+    display: inline;
   }
 
-  p {
+p {
     margin-bottom: 1em;
   }
 
-  a {
-  font-size: .7em;
+a {
+  font-size: 1.5em;
   text-decoration: none;
-  border: 1px black solid;
-  padding: 1em;
+  background-color: #3d405b;
+  border: 2px #ff5a5f solid;
+  padding: .5em;
   margin: 1em;
-  color: rgb(224, 158, 255);
+  color: #fff;
 }
 
-  footer.branding {
-    border-top: 2px solid #ccc;
+li {
+  padding: 10px;
+}
+
+.nav {
+  background: red;
+}
+
+footer.branding {
+    border-top: 2px solid #023047;
     margin-top: 20px;
     padding-top: 20px;
     font-size: .75em;
   }
 
-  #icon-credit {
-    float: right;
-    padding-right: 5px;
-  }
-
 .wrapper {
   display: flex;
   justify-content: center;
-  align-items: center;
-  flex-flow: column wrap;
+  align-items: row;
+  flex-flow: row wrap; 
+  height: 100%;
+  padding: 15px;
+  background:#fff;
 }
 
 /* HOME PAGE styles */
@@ -82,12 +99,11 @@ h4 {
   flex-flow: row wrap; 
   height: 100%;
   padding: 50px;
-  color: linen;
-  background: rgba(13,12,80,0.86);
-  border: 2px rgb(224, 158, 255) solid;
+  padding-bottom: 25px;
+  background: #fff;
 }
 
-.sign-up-links {
+.sign-up-links, .action-buttons {
   display: flex;
   justify-content: center;
   align-items: row;
@@ -95,9 +111,25 @@ h4 {
   margin: 12px;
 }
 
+.definition {
+  display: flex;
+  justify-content: center;
+  align-items: row;
+  flex-flow: row wrap;
+  padding-left: 2em;
+  padding-right: 2em;
+  margin: 1em;
+  /* width: 75%; */
+}
+
 .message {
-  margin: 12em;
-  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: row;
+  flex-flow: row wrap;
+  margin: 1em;
+  color: #ee6c4d;
+  /* width: 80%; */
 }
 
 /* SIGNUP PAGE styles */
@@ -112,35 +144,46 @@ h4 {
 
 form {
   display: block;
-  color: linen;
+}
+
+label {
+  color: #ee6c4d;
+  font-size: 1.5em;
 }
 
 input {
   display: inline;
-  margin: 12px;
+  margin: 6px;
   font-size: 1em;
-  
+  background: lightgrey; 
 }
 
 #submit {
-  background-color: rgba(158,255,197,1);
-  margin: 15px;
+  background-color: #3d405b;
+  font-family: 'Dosis', sans-serif; 
+  color: #fff;
+  margin: 25px;
+  border: 2px #ff5a5f solid;
 }
 
 /* PROFILE PAGE ================== */
 
 .display-profile {
- color: linen;
+ color: #fff;
   margin: 5px;
   padding: 15px;
 }
 
-.action-buttons {
-  display: inline-block
-}
 
-a {
-  color: rgba(158,255,197,1);
+/* CHILD SHOW PAGE ================== */
+
+
+h3, .display-child {
+  margin: 5px;
+  /* display: flex;
+  justify-content: center;
+  align-items: row;
+  flex-flow: row wrap;  */
 }
 
 @media screen and (max-width: 600px) {
