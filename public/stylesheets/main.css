@@ -135,7 +135,7 @@ footer.branding {
   flex-flow: row wrap;
   margin: 1em;
   color: #ee6c4d;
-  /* width: 80%; */
+  width: 80%;
 }
 
 /* SIGNUP PAGE styles */
@@ -174,15 +174,26 @@ input {
 
 /* PROFILE PAGE ================== */
 
-.display-profile {
- color: #fff;
-  margin: 5px;
-  padding: 15px;
+
+.profile-wrapper {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-flow: column wrap;
+}
+.profile-info {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-flow: column wrap;
 }
 
 .child-list {
-  background: #fff;
+  display: flex;
+  background: #ff5a5f;
   color: black;
+  border: none;
+  border-bottom: 2px black solid;
 }
 
 /* CHILD SHOW PAGE ================== */

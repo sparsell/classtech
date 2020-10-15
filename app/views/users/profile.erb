@@ -7,22 +7,21 @@
 </head>
 
 <body>
-
-
-
-    <h3>Hi, <%=@user.name%>. You have <%=@user.children.size%> child/ren registered in our system.</h3>
+<section class="profile-wrapper">
+  <div class="profile-info">
+    <h3>Hi, <%=@user.name%>.<br><br> You have <%=@user.children.size%> child/ren registered in ClassTech.</h3>
         <br>
       
         <% @children.each do |child|%>
             <a href ="/children/<%=child.id%>" class="child-list"><%=child.name%></a>
         <%end%>
+        </div> <!-- end profile-info -->
 
     <div class="action-buttons">
       <a href="/children/new">Add a child</a>
       <!-- <a href="/children">View a child</a> -->
     </div>
-
-      <br>
+  </section> <!-- end profile-wrapper -->
   
   </body>
 </html>
