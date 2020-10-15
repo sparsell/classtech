@@ -2,8 +2,10 @@
 
 <head>
 <link href="https://fonts.googleapis.com/css2?family=Allerta+Stencil&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="./public/stylesheets/main.css">
 </head>
+
 <body>
     <div class="display-child">
         <h3><%=@child.name%></h3><br>
@@ -16,12 +18,17 @@
             <%@child.devices.each do |device|%><br>
             <h3><%=device.device_type %></h3>
             <%end%><br><br>
+        
     </div>
 
     <div class="action-buttons">
-        <a href="/users/#{@child.user_id}">Return to your profile page</a>
+        <a href="/children/<%=@child.id%>/edit">Edit</a>
+        <a href="/users/<%=@child.user.id%>">Return to your profile page</a>
         <a href='/grades'>View by Grade</a>
+        
     </div>
+
+  <!-- add parent name here? -->
 
 </body>
 <html>

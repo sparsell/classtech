@@ -20,7 +20,7 @@
 
   <h3>Existing Devices</h3>
       <% @devices.each do |device| %>
-      <input type="checkbox" name="child[device_ids][]" id="<%= device.id %>" value="<%= device.id %>" <%='checked' if @child.devices.include?(device) %>><%= device.device_type %></input><br>
+      <input type="checkbox" name="child[device_ids][]" id="<%= device.id %>" value="<%= device.id %>" <%='checked' if @child.devices.include?(device) %>><%= device.device_type %><br>
       <% end %>
         <br>
 
@@ -36,3 +36,19 @@
     </form> 
 </body>
 </html>
+
+<h2>Edit Historical Landmark</h2>
+
+<form action="/landmarks/<%=@landmark.id %>" method="POST">
+    <input type="hidden" name="_method" value="patch">
+
+    <label for="landmark_name">Name</label>
+    <input type="text" name="landmark[name]" id="name" value="<%=@landmark.name%>">
+
+    <label for="landmark_year_completed">Year Completed</label><br>
+    <input type="text" name="landmark[year_completed]" id="year_completed" value="<%=@landmark.year_completed%>">
+    <br>
+    <br>
+    <input type="submit" value="Edit Landmark">
+
+</form>
