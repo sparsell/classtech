@@ -8,13 +8,18 @@
 
 <body>
 
+
+
     <h3>Hi, <%=@user.name%>. You have <%=@user.children.size%> child/ren registered in our system.</h3>
         <br>
-        <br>
+      
+        <% @children.each do |child|%>
+            <a href ="/children/<%=child.id%>" class="child-list"><%=child.name%></a>
+        <%end%>
 
     <div class="action-buttons">
       <a href="/children/new">Add a child</a>
-      <a href="/children/#{@user.id}">View a child</a>
+      <!-- <a href="/children">View a child</a> -->
     </div>
 
       <br>

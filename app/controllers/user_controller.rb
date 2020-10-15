@@ -37,19 +37,26 @@ class UserController < ApplicationController
 
     get '/users/logout' do
         session.clear
-        erb :'/'
+        erb :'/index'
     end
     
     ############# CONTROLLER ##################
+    get '/users/profile' do 
+        @user = User.find(params[:id])
+        erb :'users/profile'
+    end
+
     get '/users/:id' do 
         @user = User.find(params[:id])
+        @children = @user.children
+        
         erb :'users/profile'
     end
 
     ############## HELPERS ################
     helpers do
         def logged_in?
-            !session[:user_id]
+            session[:user_id]
         end
     
         def current_user

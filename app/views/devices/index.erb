@@ -1,14 +1,18 @@
-<DOCTYPE! html>
+<!DOCTYPE html>
 
 <head>
-<link href="https://fonts.googleapis.com/css2?family=Allerta+Stencil&display=swap" rel="stylesheet">
+
 <link rel="stylesheet" href="./public/stylesheets/main.css">
 </head>
 <body>
 
 
-<p>here are the devices </p>
-
+<ol>
+    <% @devices.each do |device|%>
+    <li><%= device.device_type%></li>
+    <% end %>
+    <%binding.pry%>
+</ol>
 
 </body>
 <html>
