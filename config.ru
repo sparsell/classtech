@@ -10,7 +10,5 @@ use ChildController
 use GradeController
 use UserController
 use DeviceController
-use SessionsController
-use RegistrationsController
 run ApplicationController
 
