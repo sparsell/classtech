@@ -24,6 +24,7 @@ class ChildController < ApplicationController
   #### READ ####
   get '/children' do
     erb :'children/show'
+    # erb :'/children/index'
     # erb :'children/index' (but not showing all the kids to user...or could?)
   end
 
