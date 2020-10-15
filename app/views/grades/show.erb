@@ -6,16 +6,14 @@
 </head>
 
 <body>
-    
-    <p>show by grade</p>
-    <!-- iterate over @children and find by grade the user selected from 'grades/index' page -->
-    <!-- iterate over that array of children to list the devices of each child -->
-    <!-- how does grade_id come through from index page?? -->
-    <% @children.select do |grade| %>
-        <% if grade.grade = @grade.id %>
-        <%= grade.grade %>
-        <% end %>
-        <% end %>
+
+    <p>show by grade - coming soon</p>
+    <!-- should move this to the controller? - also, look at how you got actual grades to apper on index page to use for child show page (right not, the grade.id is showing up-->
+    <%# <% @children.select do |grade| %>
+        <%# <% if grade.grade = @grade.id %>
+        <%# <%= grade.grade %> 
+        <%# <% end %> 
+        <%# <% end %>  
 
 
 

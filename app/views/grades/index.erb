@@ -13,11 +13,12 @@
             <form action="/grades/:id" method="POST">
                 <ol>
                     <% @grades.each do |grade|%>
-                    <li><a href="/grades/<%= grade.id%>">Grade: <%=grade.grade%></a></li>
+                    <li><a href="/grades/<%= grade.id%>" class="child-list">Grade: <%=grade.grade%></a></li>
                     <% end %>
                 </ol>
             </form>
-            </div>
-    </div>
+            </div> <!-- end action-buttons -->
+    </div> <!-- end display-grade -->
+    
 </body>
 </html>
