@@ -21,16 +21,18 @@
       <div class="logo">
           <h1>Class Tech</h1>
       </div>
+      <div class="nav">
+        <% if logged_in? %>
+          <a href="/users/profile">View your profile</a>
+        
+          <a href="/grades/show">View by Grade</a>
+          <a href='/users/logout'>Logout</a>
+        <%end%>
+    </div> <!-- end nav -->
   </div> <!-- end home-page-block -->
        
   <div class="wrapper"> 
-    <div class="nav">
-        <% if logged_in? %>
-          <a href="/">View your profile</a>
-          <a href="/grades/show">View by Grade</a>
-          <a href='/logout'>Logout</a>
-        <%end%>
-    </div> <!-- end nav -->
+    
 
     <%= yield %>
   

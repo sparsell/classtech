@@ -69,8 +69,14 @@ li {
   padding: 10px;
 }
 
-.nav {
-  background: red;
+.nav a {
+  font-size: 1em;
+  background: none;
+  border: none;
+  color: #ff5a5f;
+  padding: 2px;
+  margin-bottom: 2em;
+  /* background: red; */
 }
 
 footer.branding {
@@ -125,7 +131,7 @@ footer.branding {
 .message {
   display: flex;
   justify-content: center;
-  align-items: row;
+  align-items: column;
   flex-flow: row wrap;
   margin: 1em;
   color: #ee6c4d;
@@ -174,6 +180,10 @@ input {
   padding: 15px;
 }
 
+.child-list {
+  background: #fff;
+  color: black;
+}
 
 /* CHILD SHOW PAGE ================== */
 
