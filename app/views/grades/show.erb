@@ -7,16 +7,18 @@
 
 <body>
 
-    <p>show by grade - coming soon</p>
+    <h3>Students in Grade <%=@grade.grade%></h3><br>
     <!-- should move this to the controller? - also, look at how you got actual grades to apper on index page to use for child show page (right not, the grade.id is showing up-->
-    <%# <% @children.select do |grade| %>
-        <%# <% if grade.grade = @grade.id %>
-        <%# <%= grade.grade %> 
-        <%# <% end %> 
-        <%# <% end %>  
-
-
-
+    <div class="display-children-grade">
+    <ol>
+    <% @children.select do |child| %>
+        <% if child.grade_id = @grade.id%>
+        
+        <li><%= child.name %></li>
+        <% end %> 
+    <% end %>
+    </ol>
+    </div> <!--end display-children-grade -->
 </body>
 
 </html>

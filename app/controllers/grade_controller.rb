@@ -8,7 +8,8 @@ class GradeController < ApplicationController
     end
 
     get '/grades/:id' do
-        @grades = Grade.all
+        @grade = Grade.find(params[:id])
+        # @grades = Grade.all
         @children = Child.all
         @devices = Device.all
         erb :'grades/show'
