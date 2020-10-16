@@ -1,54 +1,33 @@
-<DOCTYPE! html>
+<!DOCTYPE html>
 
 <head>
 <link href="https://fonts.googleapis.com/css2?family=Allerta+Stencil&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="./public/stylesheets/main.css">
 </head>
 
 <body>
 
-<h2>Update your child's devices</h2>
+
 
   <form action="/children/<%= @child.id %>" method="POST">
     <input id="hidden" type="hidden" name="_method" value="patch">
-    <label>Edit your Child's Name:</label>
-      <br>
-    <input type="text" name="child[name]" value="<%= @child.name %>">
-      <br>
+    
+    <label>Edit your Child's Name:</label> <br><br>
+      <input type="text" name="child[name]" value="<%= @child.name %>"><br>
 
-<h2>Select an existing device or create a new one below.</h2>
+<h3>Update your child's devices</h3>
+<p>(Select an existing device or create a new one below.)</p>
 
-  <h3>Existing Devices</h3>
       <% @devices.each do |device| %>
-      <input type="checkbox" name="child[device_ids][]" id="<%= device.id %>" value="<%= device.id %>" <%='checked' if @child.devices.include?(device) %>><%= device.device_type %><br>
-      <% end %>
-        <br>
+      <input type="checkbox" name="child[device_ids][]" id="<%=device.id%>" value="<%=device.id%>" <%='checked' if @child.devices.include?(device) %>>
+      <%= device.device_type %><br>
+      <% end %><br>
 
-  <h3>New Device</h3>
-      <label>Device Name: </label>
-        <br>
-      <input type="text" name="device[device_type]" id="device_type"></input>
-        <br>
-        <br>
-      <input type="submit" value="Update Device">
+      <label>New Device Name: </label><br>
+        <input type="text" name="device[device_type]" id="device_type"><br><br>
+        <input type="submit" value="Update Device">
  
-  
     </form> 
 </body>
 </html>
-
-<h2>Edit Historical Landmark</h2>
-
-<form action="/landmarks/<%=@landmark.id %>" method="POST">
-    <input type="hidden" name="_method" value="patch">
-
-    <label for="landmark_name">Name</label>
-    <input type="text" name="landmark[name]" id="name" value="<%=@landmark.name%>">
-
-    <label for="landmark_year_completed">Year Completed</label><br>
-    <input type="text" name="landmark[year_completed]" id="year_completed" value="<%=@landmark.year_completed%>">
-    <br>
-    <br>
-    <input type="submit" value="Edit Landmark">
-
-</form>

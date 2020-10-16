@@ -28,6 +28,7 @@ class UserController < ApplicationController
             session[:user_id] = @user.id
             redirect "/users/#{@user.id}"
         else
+            #add a flash message here if missing pw or user name when signing up
             redirect '/users/login'
         end
     end

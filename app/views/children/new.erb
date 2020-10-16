@@ -14,16 +14,17 @@
                 <input type="text" name="child[name]"> <br> <br>
             
             <label for="grade">Grade (choose one):</label> <br>
-                <% @grades.each do |grade| %>
+                <% @grades.each do |grade| %><br>
                     <input type="checkbox" name="child[grade_id]" id="grade_<%=grade.id%>" value="<%=grade.id%>">
                     <%=grade.grade%>
                 <% end %>  <br>  <br>
            
-            <label for="device">Select all your child's devices: (If you don't see it, add a new one below.)</label> <br>
-                <% @devices.each do |device| %>
+            <label for="device">Select your child's devices: </label> <br>
+                <p>(If you don't see it, add a new one below.)</p>
+                <% @devices.each do |device| %><br>
                     <input type="checkbox" name="child[device_ids][]" id="<%=device.id%>" value="<%=device.id%>">
                     <%=device.device_type%>
-                <% end %>  <br>
+                <% end %>  <br><br>
 
         <h4>Add a New Device:</h4>
             <label for="device_type">Device Name:</label>

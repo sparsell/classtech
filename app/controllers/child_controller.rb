@@ -8,7 +8,8 @@ class ChildController < ApplicationController
   end 
 
   post '/children' do
-    @child = Child.create(name: params[:child][:name], grade_id: params[:child][:grade_id],  device_ids: params[:child][:device_ids], user_id: current_user.id) 
+    
+    @child = Child.create(name: params[:child][:name], grade_id: params[:child][:grade_id],  device_ids: params[:child][:device_ids], user_id: current_user[:id]) 
     
     #select from checkbox or create new and
     # need to control for duplicates!
@@ -17,6 +18,7 @@ class ChildController < ApplicationController
         # @child.devices << Device.create(device_type: params[:device][:device_type])
     end
     @child.save
+    # binding.pry
     
     redirect "/children/#{@child.id}"
   end
@@ -38,6 +40,7 @@ class ChildController < ApplicationController
   
   get '/children/:id/edit' do 
     @child = Child.find(params[:id])
+    @devices = Device.all
 
     erb :'children/edit'
   end
