@@ -9,13 +9,12 @@ class ChildController < ApplicationController
 
   post '/children' do
     
-    @child = Child.create(name: params[:child][:name], grade_id: params[:child][:grade_id],  device_ids: params[:child][:device_ids], user_id: current_user[:id]) 
+    @child = Child.create(name: params[:child][:name], grade_id: params[:child][:grade_id], device_ids: params[:child][:device_ids], user_id: current_user[:id]) 
     
-    #select from checkbox or create new and
-    # need to control for duplicates!
-    if !params[:device][:device_type].empty?
+    # need to control for duplicates
+
+    if !params[:device][:device_type].empty? && params[:device][:device_type].uniq?
         @child.devices << Device.create(params[:device])
-        # @child.devices << Device.create(device_type: params[:device][:device_type])
     end
     @child.save
     # binding.pry
@@ -26,8 +25,9 @@ class ChildController < ApplicationController
 
   #### READ ####
   get '/children' do
-    erb :'children/show'
-    # erb :'/children/index'
+    # erb :'children/show'
+    @children = Child.all
+    erb :'/children/index'
     # erb :'children/index' (but not showing all the kids to user...or could?)
   end
 
@@ -41,14 +41,15 @@ class ChildController < ApplicationController
   get '/children/:id/edit' do 
     @child = Child.find(params[:id])
     @devices = Device.all
-
+    # @tech_rules = Tech_rules.all
     erb :'children/edit'
   end
 
   patch '/children/:id' do
-    @child = Child.find_by_id(params[:id])
-    @child.update(params(:child))
-    
+    @child = Child.find_by(params[:id])
+    @child.update(params[:child])
+    @child.devices << Device.find_or_create_by(params[:device_type])
+    @child.save
     redirect "/children/#{@child.id}"
   end
 

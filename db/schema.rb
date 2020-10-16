@@ -19,12 +19,12 @@ ActiveRecord::Schema.define(version: 20201012183121) do
     t.string  "name"
     t.integer "user_id"
     t.integer "grade_id"
-    t.boolean "has_limits" #behavior
-    t.boolean "can_text"  #behavior
-    t.boolean "can_chat"  #behavior
-    t.boolean "soc_media" #behavior
-    t.boolean "play_games"  #behavior
-    t.boolean "watch_yt"  #behavior
+    t.boolean "has_limits" #move to tech_rule
+    t.boolean "can_text"  #move to tech_rule
+    t.boolean "can_chat"  #move to tech_rule
+    t.boolean "soc_media" #move to tech_rule
+    t.boolean "play_games"  #move to tech_rule
+    t.boolean "watch_yt"  #move to tech_rule
   end
 
   create_table "devices", force: :cascade do |t|

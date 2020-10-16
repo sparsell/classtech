@@ -1,4 +1,4 @@
-<DOCTYPE! html>
+<!DOCTYPE html>
 
 <head>
 <link href="https://fonts.googleapis.com/css2?family=Allerta+Stencil&display=swap" rel="stylesheet">
@@ -6,7 +6,12 @@
 </head>
 
 <body>
-"Hello"
+
+    <!-- show devices and grade -->
+    <%@children.each do |child|%>
+    <li><%=child.name%></li>
+    <li><%=child.grade_id%></li>
+    <%end%>
     
 </body>
 </html>

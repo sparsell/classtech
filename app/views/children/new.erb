@@ -15,7 +15,7 @@
             
             <label for="grade">Grade (choose one):</label> <br>
                 <% @grades.each do |grade| %><br>
-                    <input type="checkbox" name="child[grade_id]" id="grade_<%=grade.id%>" value="<%=grade.id%>">
+                    <input type="radio" required name="child[grade_id]" id="grade_<%=grade.id%>" value="<%=grade.id%>">
                     <%=grade.grade%>
                 <% end %>  <br>  <br>
            
