@@ -1,8 +1,5 @@
 class UserController < ApplicationController
 
-    get '/users' do
-        erb :'index'
-    end
     ############# SIGNUP #####################
     get '/users/signup' do
         erb :'users/signup'
@@ -41,6 +38,13 @@ class UserController < ApplicationController
     end
     
     ############# CONTROLLER ##################
+    
+    #### READ ####
+    get '/users' do
+        erb :'index'
+    end
+
+    # ???? What is convention here? Can I do this?  
     get '/users/profile' do 
         @user = User.find(params[:id])
         erb :'users/profile'
