@@ -10,13 +10,11 @@
     <div class="display-grade">
         <h3>View the tech in your class by grade</h3>
             <div class="action-buttons">
-            <form action="/grades/:id" method="POST">
                 <ol>
                     <% @grades.each do |grade|%>
                     <li><a href="/grades/<%= grade.id%>" class="child-list">Grade: <%=grade.grade%></a></li>
                     <% end %>
                 </ol>
-            </form>
             </div> <!-- end action-buttons -->
     </div> <!-- end display-grade -->
 
