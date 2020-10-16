@@ -193,6 +193,7 @@ input {
   background: #ff5a5f;
   color: black;
   border: none;
+  margin: .2em;
   border-bottom: 2px black solid;
 }
 
