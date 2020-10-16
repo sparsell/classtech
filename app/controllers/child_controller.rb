@@ -10,7 +10,8 @@ class ChildController < ApplicationController
   post '/children' do
     @child = Child.create(name: params[:child][:name], grade_id: params[:child][:grade_id],  device_ids: params[:child][:device_ids], user_id: current_user.id) 
     
-    #select from checkbox or create new but need to control for duplicates!
+    #select from checkbox or create new and
+    # need to control for duplicates!
     if !params[:device][:device_type].empty?
         @child.devices << Device.create(params[:device])
         # @child.devices << Device.create(device_type: params[:device][:device_type])
