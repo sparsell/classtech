@@ -12,12 +12,12 @@ class ChildController < ApplicationController
     @child = Child.create(name: params[:child][:name], grade_id: params[:child][:grade_id], device_ids: params[:child][:device_ids], user_id: current_user[:id]) 
     
     # need to control for duplicates
-    
-    if !params[:device][:device_type].empty? && params[:device][:device_type]
-        @child.devices << Device.create(params[:device])
-    end
+
+    # if !params[:device][:device_type].empty? && params[:device][:device_type]
+    #     @child.devices << Device.create(params[:device])
+    # end
     @child.save
-    
+    binding.pry
     redirect "/children/#{@child.id}"
     
   end
