@@ -8,12 +8,13 @@
 
 <body>
     <div class="display-child">
-        <h3><%=@child.name%></h3><br>
+        <h2><%=@child.name%></h2><br>
 
         <!--show child's grade by number, not grade.id -->
-        <h3>Grade:<%=@child.grade%></h3><br>
+        <h3>Grade: <%=@child.grade.grade%></h3><br>
+        <%# <%binding.pry%> 
 
-        <h3>Has the following devices:</h3>
+        <h3><%=@child.name%>'s devices:</h3>
         <!--show child's devices -->
             <%@child.devices.each do |device|%><br>
             <h3><%=device.device_type %></h3>
