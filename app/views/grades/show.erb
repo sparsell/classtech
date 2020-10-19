@@ -6,21 +6,17 @@
 </head>
 
 <body>
-
-    <!-- should move this to the controller? -->
     
     <div class="display-children-grade">
+    <% if @message%>
+    <%= @message%>
+    <% end %>
+    
     <h3>Students in Grade <%=@grade.grade%></h3><br>
     <ol>
-<!-- all children are showing up instead of just those in the specified grade... -->
-    <% @children.select do |child| %>
-        <% if child.grade_id == @grade_id%>
-        <%# <%binding.pry%>
-            <li><%= child.name %></li>
-            <li><%= child.user_id%></li>
-            <%else%>
-            <% end %> 
-        <% end %>
+        <% @children.each do |child|%>
+        <%= child.name%>
+        <%end%>
     </ol>
     </div> <!--end display-children-grade -->
 </body>

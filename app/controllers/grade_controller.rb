@@ -1,6 +1,4 @@
 class GradeController < ApplicationController
-
-    #want to show all children and devices by grade
     
     get '/grades' do
         @grades = Grade.all
@@ -9,10 +7,10 @@ class GradeController < ApplicationController
 
     get '/grades/:id' do
         @grade = Grade.find(params[:id])
-        # binding.pry
-        @grades = Grade.all
-        @children = Child.all
-        @devices = Device.all
+        # @children = Child.all
+        @children = @grade.children
+
+        @message = @children.empty? ? "There aren't any kids in this grade.": false
         erb :'grades/show'
     end
 

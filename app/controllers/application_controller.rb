@@ -18,13 +18,13 @@ class ApplicationController < Sinatra::Base
   helpers do
   #returns a boolean if the user is logged in 
     def logged_in?
-        !session[:user_id]
+        !!session[:user_id]
     end
 
     #keeps track of the logged in user
     def current_user
         User.find_by(id: session[:user_id])
     end
-end
+  end
 
 end

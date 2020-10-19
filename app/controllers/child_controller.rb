@@ -8,16 +8,13 @@ class ChildController < ApplicationController
   end 
 
   post '/children' do
-    
     @child = Child.create(name: params[:child][:name], grade_id: params[:child][:grade_id], device_ids: params[:child][:device_ids], user_id: current_user[:id]) 
     
     # need to control for duplicates
-
     if !params[:device][:device_type].empty? && params[:device][:device_type].uniq?
         @child.devices << Device.create(params[:device])
     end
     @child.save
-    # binding.pry
     
     redirect "/children/#{@child.id}"
   end
@@ -25,15 +22,16 @@ class ChildController < ApplicationController
 
   #### READ ####
   get '/children' do
-    # erb :'children/show'
     @children = Child.all
     erb :'/children/index'
     # erb :'children/index' (but not showing all the kids to user...or could?)
   end
 
   get '/children/:id' do
-    @child = Child.find_by(params[:id])
-    erb :"/children/show" 
+    @child = Child.find(params[:id])
+    @grades = Grade.all
+    @devices = Device.all
+    erb :'/children/show' 
   end 
     
   ### UPDATE ###
@@ -41,7 +39,7 @@ class ChildController < ApplicationController
   get '/children/:id/edit' do 
     @child = Child.find(params[:id])
     @devices = Device.all
-    # @tech_rules = Tech_rules.all
+    # @tech_rules = Tech_rules.all would like to add at some point
     erb :'children/edit'
   end
 

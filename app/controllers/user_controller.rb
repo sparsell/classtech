@@ -46,36 +46,28 @@ class UserController < ApplicationController
     end
 
     # ???? What is convention here? Can I do this?  
-    get '/users/profile' do 
-        @user = User.find(params[:id])
-        erb :'users/profile'
-    end
+    # get '/users/profile' do 
+    #     @user = User.find(params[:id])
+    #     erb :'users/profile'
+    # end
 
     get '/users/:id' do 
         @user = User.find(params[:id])
         @children = @user.children
-        
+        # binding.pry
         erb :'users/profile'
+
     end
 
     ############## HELPERS ################
     helpers do
         def logged_in?
-            session[:user_id]
+            !!session[:user_id]
         end
     
         def current_user
-            User.find(session[:user_id])
+            @current_user = User.find(session[:user_id])
         end
-
-end
-
-
-
-
-
-
-
-
+    end
 
 end
