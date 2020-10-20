@@ -11,11 +11,13 @@
     <% if @message%>
     <%= @message%>
     <% end %>
-    
+
     <h3>Students in Grade <%=@grade.grade%></h3><br>
     <ol>
         <% @children.each do |child|%>
-        <%= child.name%>
+        <a class="grade-list" href="/children/<%=child.id%>"><%= child.name%></a>
+         
+       
         <%end%>
     </ol>
     </div> <!--end display-children-grade -->

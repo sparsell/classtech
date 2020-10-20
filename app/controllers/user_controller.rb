@@ -23,12 +23,12 @@ class UserController < ApplicationController
         #matches agains the existing entries in db
         #if matching, signs in, or else redirect to signup
         @user = User.find_by(user_name: params[:user_name])
-        
         if @user && @user.authenticate(params[:password])
             session[:user_id] = @user.id
             redirect "/users/#{@user.id}"
         else
             #add a flash message here if missing pw or user name when signing up
+            @message = "You must have a user name and a password to login"
             redirect '/users/login'
         end
     end
@@ -54,7 +54,6 @@ class UserController < ApplicationController
     get '/users/:id' do 
         @user = User.find(params[:id])
         @children = @user.children
-        # binding.pry
         erb :'users/profile'
 
     end

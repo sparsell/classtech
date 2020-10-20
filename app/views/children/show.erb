@@ -10,9 +10,8 @@
     <div class="display-child">
         <h2><%=@child.name%></h2><br>
 
-        <!--show child's grade by number, not grade.id -->
-        <h3>Grade: <%=@child.grade.grade%></h3><br>
-        <%# <%binding.pry%> 
+        <!--show child's grade by name, not grade.id -->
+        <h3>Grade: <%=@child.grade_id%></h3><br> 
 
         <h3><%=@child.name%>'s devices:</h3>
         <!--show child's devices -->

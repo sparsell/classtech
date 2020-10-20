@@ -208,6 +208,13 @@ h3, .display-child {
   flex-flow: row wrap;  */
 }
 
+
+.grade-list {
+  display: block;
+  font: .75em;
+  background: none;
+  color: grey;
+  border: none}
 @media screen and (max-width: 600px) {
   /* .wrapper {
     -moz-box-shadow: none;

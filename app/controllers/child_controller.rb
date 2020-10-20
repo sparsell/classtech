@@ -44,7 +44,7 @@ class ChildController < ApplicationController
   end
 
   patch '/children/:id' do
-    @child = Child.find_by(params[:id])
+    @child = Child.find(params[:id])
     @child.update(params[:child])
     @child.devices << Device.find_or_create_by(params[:device_type])
     @child.save
