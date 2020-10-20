@@ -31,7 +31,7 @@ class ChildController < ApplicationController
   get '/children/:id' do
     @child = Child.find(params[:id])
     @grades = Grade.all
-    @devices = Device.all
+    @child.devices
     erb :'/children/show' 
   end 
     

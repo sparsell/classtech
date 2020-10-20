@@ -7,6 +7,7 @@ Signup:
 
 Login: 
 - show a message/error "you must enter a user name and a password to be able to login" when user only enters one of the required
+@message = @children.empty? ? "There aren't any children in this grade.": false
 
 Child new.erb
 - Restrict duplication creating a new device 
