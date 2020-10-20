@@ -24,8 +24,6 @@
       <div class="nav">
         <% if logged_in? %>
           <a href="/users/profile">View your profile</a>
-          
-        
           <a href="/grades">View by Grade</a>
           <a href='/users/logout'>Logout</a>
         <%end%>
@@ -34,6 +32,12 @@
        
   <div class="wrapper"> 
     
+    <% flash.keys.each do |type| %>
+  <div data-alert class="flash <%= type %> alert-box radius">
+    <%= flash[type] %>
+    <a href="#" class="close">&times;</a>
+  </div>
+<% end %>
 
     <%= yield %>
   

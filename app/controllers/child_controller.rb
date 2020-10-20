@@ -38,18 +38,22 @@ class ChildController < ApplicationController
   ### UPDATE ###
   
   get '/children/:id/edit' do 
-    @child = Child.find(params[:id])
+      @child = Child.find(params[:id])
     @devices = Device.all
-    # @tech_rules = Tech_rules.all would like to add at some point
     erb :'children/edit'
   end
 
   patch '/children/:id' do
     @child = Child.find(params[:id])
-    @child.update(params[:child])
-    @child.devices << Device.find_or_create_by(params[:device_type])
-    @child.save
+    if logged_in? && current_user == @child.user
+      @child.update(params[:child])
+      @child.devices << Device.find_or_create_by(params[:device_type])
+      @child.save
     redirect "/children/#{@child.id}"
+  else
+    flash[:message] = "You don't have access to edit/delete this child's info"
+    redirect "/children/#{@child.id}/edit"
+  end
   end
 
   ### DELETE ###
