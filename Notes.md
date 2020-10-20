@@ -10,15 +10,20 @@ Login:
 @message = @children.empty? ? "There aren't any children in this grade.": false
 
 Child new.erb
-- Restrict duplication creating a new device 
+- Restrict duplication when creating a new device 
+- Restrict a user from having two children with the same name
+- persisting issues withe devices (think it's from dodgy validation code...)
 
 Child show.erb
-- iteration not working to show child's devices 
+x iteration not working to show child's devices 
 - delete action
-- do not allow edit/delete if not the owner of the child
+- do not allow edit/delete if not the child's parent (user)
 
 Grade show.erb
-- add each child's devices
+X add each child's devices
+
+Grade index.erb
+- nav link to "view your profile" is not working
 
 Navigation:
 - View your profile (in Layout) v. 'Return to your profile page' on child show page
