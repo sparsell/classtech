@@ -7,7 +7,8 @@ class UserController < ApplicationController
 
     post '/users/signup' do
         @user = User.new(name: params[:name], user_name: params[:user_name], password: params[:password])
-            if @user.save #will return false if the password is not filled in
+            if @user.valid?
+                @user.save #will return false if the password is not filled in
                 redirect 'users/login'
             else
                 redirect 'users/signup'

@@ -11,7 +11,8 @@ class ChildController < ApplicationController
     @child = Child.create(name: params[:child][:name], grade_id: params[:child][:grade_id], device_ids: params[:child][:device_ids], user_id: current_user[:id]) 
     
     # need to control for duplicates
-    if !params[:device][:device_type].empty? && params[:device][:device_type].uniq?
+    if !params[:device][:device_type].empty? 
+      # && params[:device][:device_type].valid?
         @child.devices << Device.create(params[:device])
     end
     @child.save
@@ -52,5 +53,11 @@ class ChildController < ApplicationController
   end
 
   ### DELETE ###
+
+  delete 'children/:id' do
+    @child = Child.find_by(params[:id])
+    @child.destroy
+    erb :'/children/show'
+  end
 
 end
