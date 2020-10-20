@@ -54,9 +54,9 @@ class ChildController < ApplicationController
 
   ### DELETE ###
 
-  delete 'children/:id' do
-    @child = Child.find_by(params[:id])
-    @child.destroy
+  delete 'children/:id/delete' do
+    @child = Child.find_by(id: params[:id])
+    @child.delete
     erb :'/children/show'
   end
 
