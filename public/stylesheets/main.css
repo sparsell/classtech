@@ -214,7 +214,9 @@ h3, .display-child {
   font: .75em;
   background: none;
   color: grey;
-  border: none}
+  border: none;
+}
+
 @media screen and (max-width: 600px) {
   /* .wrapper {
     -moz-box-shadow: none;

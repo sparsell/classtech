@@ -10,8 +10,6 @@ class GradeController < ApplicationController
         @grade = Grade.find(params[:id])
         @children = @grade.children
         @devices = Device.all
-        # list each childs devices after their name:
-        
         @message = @children.empty? ? "There aren't any children in this grade.": false
         erb :'grades/show'
     end

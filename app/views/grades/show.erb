@@ -13,17 +13,17 @@
     <% end %>
 
     <h3>Students in Grade <%=@grade.grade%></h3><br>
-        <ol>
+        <%# <ol> %>
+            <%# <div class="grade-list"> %>
             <% @children.each do |child|%>
             <a class="grade-list" href="/children/<%=child.id%>"><%= child.name%></a>
-            <li><%child.name%>has:</li>
-                <%child.devices.each do |device| %>
-                <p><%=device.device_type%></p>  
+                <%child.devices.each do |device|%>
+                <li><%=device.device_type%></li>  
                 <%end%>
             <%end%>
-
+            <%# </div> %>
             
-        </ol>
+        <%# </ol> %>
     </div> <!--end display-children-grade -->
 </body>
 
