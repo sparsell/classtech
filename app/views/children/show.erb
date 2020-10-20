@@ -22,11 +22,15 @@
     </div>
 
     <div class="action-buttons">
-        <%# <% if logged_in? && @child.user_id == sessions[:user_id]%> 
-        <a href="/children/<%=@child.id%>/edit">Edit</a>
-        <a href='/children/<%=@child.id%>'>Delete</a>
-        <%# <%else%>
-        <%# <%end%>  
+        
+        <% if @child.user_id == session[:user_id]%> 
+            <a href="/children/<%=@child.id%>/edit">Edit</a><br>
+
+            <form method="POST" action="children/<%=@child.id%>%/delete">
+            <input type="hidden" name="_method" id="hidden" value="Delete">
+            <input type="submit" value="Delete Child">
+            </form> 
+            <% end %>
 
         <a href="/users/<%=@child.user.id%>">Return to your profile page</a>
         <a href='/grades'>View by Grade</a>
