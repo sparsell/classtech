@@ -1,7 +1,9 @@
+require 'sinatra/flash'
+
 class UserController < ApplicationController
 
     ############# SIGNUP #####################
-    get '/users/signup' do
+    get '/users' do
         erb :'users/signup'
     end
 
@@ -11,7 +13,8 @@ class UserController < ApplicationController
                 @user.save #will return false if the password is not filled in
                 redirect 'users/login'
             else
-                redirect 'users/signup'
+                flash[:error] = "You must enter a user name and a password to signup. Please try again."
+                redirect '/users'
             end
         end
 
@@ -28,8 +31,7 @@ class UserController < ApplicationController
             session[:user_id] = @user.id
             redirect "/users/#{@user.id}"
         else
-            #add a flash message here if missing pw or user name when signing up
-            @message = "You must have a user name and a password to login"
+            flash[:error] = "You must enter a valid user name and password to login. Please try again."
             redirect '/users/login'
         end
     end
@@ -42,18 +44,21 @@ class UserController < ApplicationController
     ############# CONTROLLER ##################
     
     #### READ ####
-    get '/users' do
+    get '/' do
         erb :'index'
     end
 
     # ???? What is convention here? Can I do this?  
-    # get '/users/profile' do 
-    #     @user = User.find(params[:id])
-    #     erb :'users/profile'
-    # end
+    get '/users' do 
+        @user = User.find(params[:id])
+        # binding.pry
+        erb :'users/profile'
+    end
 
     get '/users/:id' do 
+        # binding.pry
         @user = User.find(params[:id])
+        # @user = current_user - not this
         @children = @user.children
         erb :'users/profile'
 

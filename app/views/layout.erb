@@ -16,6 +16,8 @@
   </head>
 
   <body>
+
+  
  
     <div class="home-page-block">
       <div class="logo">
@@ -23,21 +25,24 @@
       </div>
       <div class="nav">
         <% if logged_in? %>
-          <a href="/users/profile">View your profile</a>
+          <a href="/users">View your profile</a>
           <a href="/grades">View by Grade</a>
           <a href='/users/logout'>Logout</a>
         <%end%>
     </div> <!-- end nav -->
+    <br>
+    <% if flash[:error] %>
+  <h4 style="color: white; background:grey; padding: 2px;"><%= flash[:error] %></h4>
+<% end %>
+
+<% if flash[:message] %>
+  <h4 style=><%= flash[:message] %></h4>
+<% end %>
   </div> <!-- end home-page-block -->
        
   <div class="wrapper"> 
     
-    <% flash.keys.each do |type| %>
-  <div data-alert class="flash <%= type %> alert-box radius">
-    <%= flash[type] %>
-    <a href="#" class="close">&times;</a>
-  </div>
-<% end %>
+   
 
     <%= yield %>
   

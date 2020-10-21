@@ -7,10 +7,12 @@ class ApplicationController < Sinatra::Base
   set :views, Proc.new { File.join(root, "../views/") }
 
   configure do
-    enable :sessions
-    set :session_secret, "my_secret_session"
     set :public_folder, 'public'
     set :views, 'app/views'
+    enable :sessions
+    register Sinatra::Flash
+    set :session_secret, "my_secret_session"
+    
   end
 
   get '/' do

@@ -7,6 +7,11 @@
 </head>
 
 <body>
+
+<% if flash[:message] %>
+  <h4><%= flash[:message] %></h4>
+<% end %>
+
 <section class="profile-wrapper">
   <div class="profile-info">
     <h3>Hi, <%=@user.name%>.<br><br> You have <%=@user.children.size%> child/ren registered in ClassTech.</h3>
