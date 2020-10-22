@@ -9,12 +9,11 @@ class UserController < ApplicationController
 
     post '/users/signup' do
         @user = User.new(name: params[:name], user_name: params[:user_name], password: params[:password])
-        binding.pry
             if @user.valid?
                 @user.save 
                 redirect 'users/login'
             else
-                flash[:error] = "You must enter a user name and a password to signup. Please try again."
+                flash[:error] = "That user name is already taken. Please try again."
                 redirect '/users'
             end
         end
@@ -39,7 +38,7 @@ class UserController < ApplicationController
 
     get '/users/logout' do
         session.clear
-        erb :'/index'
+         '/users'
     end
     
     ############# CONTROLLER ##################
