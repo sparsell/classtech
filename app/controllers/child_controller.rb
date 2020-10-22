@@ -46,10 +46,12 @@ class ChildController < ApplicationController
   end
 
   patch '/children/:id' do
-    @child = Child.find(params[:id])
+    @child = Child.find(params[:id]) 
     if logged_in? && current_user == @child.user
-      @child.update(params[:child])
-      @child.devices << Device.find_or_create_by(params[:device_type])
+      @child.update(params[:child]) #update child's name
+      # @child.devices << Device.find_or_create_by(params[:device_type])
+      @child.devices << Device.find_or_create_by(params[:device])
+      # binding.pry
       @child.save
     redirect "/children/#{@child.id}"
   else
