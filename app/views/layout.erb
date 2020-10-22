@@ -25,7 +25,8 @@
       </div>
       <div class="nav">
         <% if logged_in? %>
-          <a href="/users">View your profile</a>
+        
+        <a href="/users/<%=current_user.id%>/profile">View your profile</a>
           <a href="/grades">View by Grade</a>
           <a href='/users/logout'>Logout</a>
         <%end%>
@@ -49,7 +50,7 @@
          
     <div class="message">
     <q>You're not the only one in your grade who doesn't have a phone.</q>
-    <p>- every parent, at least once in their lives</p>
+    <p>- every parent, at least once in their life</p>
   </div> <!-- end message  -->
 </div> <!-- end wrapper -->
 

@@ -38,7 +38,7 @@ class UserController < ApplicationController
 
     get '/users/logout' do
         session.clear
-         '/users'
+        erb :'/index'
     end
     
     ############# CONTROLLER ##################
