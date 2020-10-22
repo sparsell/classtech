@@ -22,20 +22,20 @@
     </div>
 
     <div class="action-buttons">
-        
-        <% if @child.user_id == session[:user_id]%> 
+            <!-- EDIT CHILD only if child belongs to current_user-->
+            <% if @child.user_id == session[:user_id]%>
             <a href="/children/<%=@child.id%>/edit">Edit</a><br>
 
-            <form method="POST" action="children/<%=@child.id%>%/delete">
-            <input type="hidden" name="_method" id="hidden" value="Delete">
+            <!-- DELETE CHILD only if child belongs to current_user-->
+            <form method="POST" action="children/<%=@child.id%>">
+            <input type="hidden" name="_method" id="hidden" value="DELETE">
             <input type="submit" value="Delete Child">
             </form> 
             <% end %>
 
-        <a href="/users/<%=@child.user.id%>">Return to your profile page</a>
+            <!-- NAVIGATION -->
+        <a href="/users/<%=current_user.id%>/profile">Return to your profile page</a>
         <a href='/grades'>View by Grade</a>
-        
-        
     </div>
 
   <!-- add parent name here? -->

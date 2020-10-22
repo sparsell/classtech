@@ -8,6 +8,8 @@ class ChildController < ApplicationController
   end 
 
   post '/children' do
+    # if logged_in? && current_user == @child.user
+    # write a conditional to check if grade_id and user_id are present in params
     @child = Child.create(name: params[:child][:name], grade_id: params[:child][:grade_id], device_ids: params[:child][:device_ids], user_id: current_user[:id]) 
     
     # need to control for duplicates
@@ -58,10 +60,15 @@ class ChildController < ApplicationController
 
   ### DELETE ###
 
-  delete 'children/:id/delete' do
-    @child = Child.find_by(id: params[:id])
-    @child.delete
-    erb :'/children/show'
+  delete 'children/:id' do
+    @child = Child.delete(params[:id])
+    if logged_in? && current_user == @child.user_id
+      @child.destroy
+      flash[:delete] = "You have successfully deleted this child"
+    else
+      flash[:message] = "You canont delete this child"
+    end
+    redirect "/users/#{@user.id}/profile"
   end
 
 end
