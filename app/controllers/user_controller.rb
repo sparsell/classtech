@@ -9,8 +9,9 @@ class UserController < ApplicationController
 
     post '/users/signup' do
         @user = User.new(name: params[:name], user_name: params[:user_name], password: params[:password])
+        binding.pry
             if @user.valid?
-                @user.save #will return false if the password is not filled in
+                @user.save 
                 redirect 'users/login'
             else
                 flash[:error] = "You must enter a user name and a password to signup. Please try again."
@@ -49,16 +50,14 @@ class UserController < ApplicationController
     end
 
     # ???? What is convention here? Can I do this?  
-    get '/users' do 
+    get '/users/:id/profile' do 
         @user = User.find(params[:id])
-        # binding.pry
+        @children = @user.children
         erb :'users/profile'
     end
 
     get '/users/:id' do 
-        # binding.pry
         @user = User.find(params[:id])
-        # @user = current_user - not this
         @children = @user.children
         erb :'users/profile'
 
