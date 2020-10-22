@@ -12,7 +12,8 @@
         <div class="profile-info">
   
             <!-- Child's name -->
-            <h2><%=@child.name%></h2><br>
+            <h2><%=@child.name%></h2>
+
             <h3>Grade: <%=@child.grade.grade%></h3><br> 
             
             <!-- Child's devices -->
@@ -21,19 +22,21 @@
                 <%@child.devices.each do |device|%><br>
                 <h3><%=device.device_type %></h3>
                 <%end%><br><br>
-          </div> <!-- end profile-info -->
-        
-        
-        <div class="action-buttons">
-            <!-- EDIT CHILD only if child belongs to current_user-->
+                <!-- DELETE CHILD only if child belongs to current_user-->
             <% if @child.user_id == session[:user_id]%>
-            <a href="/children/<%=@child.id%>/edit">Edit</a><br>
-
-            <!-- DELETE CHILD only if child belongs to current_user-->
             <form method="POST" action="children/<%=@child.id%>">
             <input type="hidden" name="_method" id="hidden" value="DELETE">
             <input type="submit" value="Delete Child">
             </form> 
+            <% end %>
+          </div> <!-- end profile-info -->
+        
+        
+        <div class="action-buttons">
+        
+        <!-- EDIT CHILD only if child belongs to current_user-->
+        <% if @child.user_id == session[:user_id]%>
+            <a href="/children/<%=@child.id%>/edit">Edit</a><br>
             <% end %>
 
             <!-- NAVIGATION for all users -->
