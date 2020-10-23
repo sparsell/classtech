@@ -12,6 +12,7 @@ Database:
 
 Did it work?
 - Test relationships in 'tux'
+  -- want to do something like this: @child.device_types << device_type
 
 Controllers:
 - children/new
