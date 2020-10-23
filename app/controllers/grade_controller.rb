@@ -10,7 +10,10 @@ class GradeController < ApplicationController
         @grade = Grade.find(params[:id])
         @children = @grade.children
         @devices = Device.all
-        @message = @children.empty? ? "There aren't any children in this grade.": false
+        if @children.empty?
+            flash[:message] = "There aren't any children in this grade."
+        end
+        # @message = @children.empty? ? "There aren't any children in this grade.": false
         erb :'grades/show'
     end
 

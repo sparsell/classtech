@@ -8,22 +8,17 @@
 <body>
     
     <div class="display-children-grade">
-    <% if @message%>
-    <%= @message%>
-    <% end %>
+   
 
     <h3>Students in Grade <%=@grade.grade%></h3><br>
-        <%# <ol> %>
-            <%# <div class="grade-list"> %>
+        
             <% @children.each do |child|%>
-            <a class="grade-list" href="/children/<%=child.id%>"><%= child.name%></a>
+            <a class="child-list" href="/children/<%=child.id%>"><%= child.name%></a>
                 <%child.devices.each do |device|%>
                 <li><%=device.device_type%></li>  
                 <%end%>
             <%end%>
-            <%# </div> %>
-            
-        <%# </ol> %>
+         
     </div> <!--end display-children-grade -->
 </body>
 

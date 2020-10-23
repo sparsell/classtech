@@ -33,13 +33,12 @@
         <%end%>
     </div> <!-- end nav -->
     <br>
-    <% if flash[:error] %>
-  <h4 style="color: white; background:grey; padding: 2px;"><%= flash[:error] %></h4>
-<% end %>
+    <div class="flash">
+      <% if flash[:message] %>
+          <h4><%= flash[:message] %></h4>
+      <% end %>
+    </div>
 
-<% if flash[:message] %>
-  <h4 style=><%= flash[:message] %></h4>
-<% end %>
   </div> <!-- end home-page-block -->
        
   <div class="wrapper"> 
@@ -49,11 +48,12 @@
     <%= yield %>
   
          
-    <div class="message">
+    
+</div> <!-- end wrapper -->
+<div class="message">
     <q>You're not the only one in your grade who doesn't have a phone.</q>
     <p>- every parent, at least once in their life</p>
   </div> <!-- end message  -->
-</div> <!-- end wrapper -->
 
         <footer class="branding">
             <small>&copy; 2020 <strong>Classtech</strong></small>

@@ -2,24 +2,33 @@ class ChildController < ApplicationController
 
    #### CREATE ####
   get '/children/new' do
+    if logged_in? 
     @grades = Grade.all
     @devices = Device.all
+   
     erb :'children/new' 
+    else
+      flash[:message] = "Please log in first."
+      redirect '/'
+    end
   end 
 
   post '/children' do
-    # if logged_in? && current_user == @child.user
-    # write a conditional to check if grade_id and user_id are present in params
-    @child = Child.create(name: params[:child][:name], grade_id: params[:child][:grade_id], device_ids: params[:child][:device_ids], user_id: current_user[:id]) 
-    
-    # need to control for duplicates
-    if !params[:device][:device_type].empty? 
-      # && params[:device][:device_type].valid?
-        @child.devices << Device.create(params[:device])
+    if logged_in? 
+      # write a conditional to check if grade_id and user_id are present in params
+      @child = Child.create(name: params[:child][:name], grade_id: params[:child][:grade_id], device_ids: params[:child][:device_ids], user_id: current_user[:id]) 
+      @child.save
+       # if !params[:device][:device_type].empty? 
+    #   # && params[:device][:device_type].valid?
+    #     @child.devices << Device.create(params[:device])
+    # end
+      redirect "/children/#{@child.id}"
+     
+    else
+      flash[:message] = "You must be logged in to add a child."
+
+      redirect '/'
     end
-    @child.save
-    
-    redirect "/children/#{@child.id}"
   end
 
 
@@ -41,8 +50,14 @@ class ChildController < ApplicationController
   
   get '/children/:id/edit' do 
       @child = Child.find(params[:id])
-    @devices = Device.all
-    erb :'children/edit'
+      # binding.pry
+      @devices = Device.all
+        if logged_in? && current_user.id == @child.user_id
+          erb :'children/edit'
+        else
+          flash[:message] = "You cannot edit a child that does not belong to you."
+          redirect "/grades/#{@child.grade_id}"
+        end
   end
 
   patch '/children/:id' do
@@ -55,22 +70,23 @@ class ChildController < ApplicationController
       @child.save
     redirect "/children/#{@child.id}"
   else
-    flash[:message] = "You don't have access to edit/delete this child's info"
+    flash[:message] = "You don't have access to edit this child's profile."
     redirect "/children/#{@child.id}/edit"
   end
   end
 
   ### DELETE ###
 
-  delete 'children/:id' do
-    @child = Child.delete(params[:id])
-    if logged_in? && current_user == @child.user_id
+  delete '/children/:id' do
+    # binding.pry
+    @child = Child.find(params[:id])
+    if logged_in? && current_user.id == @child.user_id
       @child.destroy
-      flash[:delete] = "You have successfully deleted this child"
+      flash[:message] = "You have successfully deleted this child's profile."
     else
-      flash[:message] = "You canont delete this child"
+      flash[:message] = "You canont delete a child that does not belong to you."
     end
-    redirect "/users/#{@user.id}/profile"
+    redirect "/users/#{current_user.id}/profile"
   end
 
 end
