@@ -1,25 +1,34 @@
 
 Welcome to ClassTech
 
-At-a-glance view of the technology your child's classmates use. 
-
-If you are a parent of a child from Grade 3 - Grade 8, you've likely heard this statement more than once: "I'm the only one in my grade who doesn't have a phone.". 
-
+An at-a-glance view of the technology your child's classmates use. 
 
 
 Summary
-Getting Started
-Runing the tests
-Deployment
+
+If you are a parent of a child from Grade 3 - Grade 8, you've likely heard this statement more than once: "I'm the only one in my grade who doesn't have a phone.". If used with the parents of your child's class, you can all view the technology in the class and have an informed response.
+
+This app is not currently hosted but may be in the future. Keep in touch!
+
+Installing
+1. Fork and clone the repository
+2. Run 'bundle install' in your terminal to ensure all dependencies are installed
+3. Run 'shotgun' in your terminal
+4. Open your favorite browser and navigate to 'localhost:9393/' (replacing '9393' with wherever your terminal tells you it is listening, if different)
+
 Built With
- - <a href="https://rubygems.org/gems/sinatra">Sinatra</a> 
- - ActiveRecord
- - sqlite3
- - bcrypt
- - sinatra-flash
+ - <a href="https://rubygems.org/gems/sinatra">Sinatra</a>
+ - <a href="https://rubygems.org/gems/activerecord">ActiveRecord</a>
+ - <a href="https://rubygems.org/gems/activerecord">sqlite3</a>
+ - <a href="https://rubygems.org/gems/activerecord">bcrypt</a>
+ - <a href="https://rubygems.org/gems/activerecord">sinatra-flash</a>
+ 
 Contributing
-Versioning
+
+
 Authors
+- <a href="https://github.com/sparsell">Sonja Parsell</a>, Creator (while studying at Flatiron School's Software Engineering Program)
+
 License
 Acknowledgments
 Getting Started
