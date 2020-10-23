@@ -32,7 +32,7 @@ h1 {
 h2 {
     font-size: 3em;
     line-height: 1em;
-    margin-bottom: 1em;
+    margin-bottom: .5em;
     font-family: 'Dosis', sans-serif;
 
   }
@@ -96,6 +96,13 @@ footer.branding {
   background:#fff;
 }
 
+.flash {
+  margin: 1em;
+  padding: 8px;
+  color: white; 
+  background:grey; 
+}
+
 /* HOME PAGE styles */
 
 .home-page-block {
@@ -134,7 +141,7 @@ footer.branding {
   align-items: column;
   flex-flow: row wrap;
   margin: 1em;
-  color: #ee6c4d;
+  color: #fff;
   width: 80%;
 }
 
