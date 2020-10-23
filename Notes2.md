@@ -1,10 +1,10 @@
 
 Models:
-- Add ChildDevice class
+[x] Add ChildDevice class
 
 Associations:
 - Change associations in Device and Child
-- Add associations in ChildDevice
+[x] Add associations in ChildDevice
 - Check how validaitons will change ??
 
 Database:
