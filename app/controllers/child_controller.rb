@@ -17,16 +17,16 @@ class ChildController < ApplicationController
     if logged_in? 
       # write a conditional to check if grade_id and user_id are present in params
       @child = Child.create(name: params[:child][:name], grade_id: params[:child][:grade_id], device_ids: params[:child][:device_ids], user_id: current_user[:id]) 
-      @child.save
-       # if !params[:device][:device_type].empty? 
-    #   # && params[:device][:device_type].valid?
-    #     @child.devices << Device.create(params[:device])
-    # end
+
+      #CREATE DEVICE:
+      if !params[:device][:device_type].empty?
+        @child.devices << Device.create(device_type: params[:device][:device_type])
+      end
+
+      @child.save #do I not need this because I used .create and << ? 
       redirect "/children/#{@child.id}"
-     
     else
       flash[:message] = "You must be logged in to add a child."
-
       redirect '/'
     end
   end
@@ -35,8 +35,7 @@ class ChildController < ApplicationController
   #### READ ####
   get '/children' do
     @children = Child.all
-    erb :'/children/index'
-    # erb :'children/index' (but not showing all the kids to user...or could?)
+    erb :'/children/index' # children shown in grade index for this project 
   end
 
   get '/children/:id' do
@@ -50,7 +49,6 @@ class ChildController < ApplicationController
   
   get '/children/:id/edit' do 
       @child = Child.find(params[:id])
-      # binding.pry
       @devices = Device.all
         if logged_in? && current_user.id == @child.user_id
           erb :'children/edit'
@@ -65,8 +63,11 @@ class ChildController < ApplicationController
     if logged_in? && current_user == @child.user
       @child.update(params[:child]) #update child's name
       # @child.devices << Device.find_or_create_by(params[:device_type])
+      if !params[:device][:device_type].empty?
+        binding.pry
       @child.devices << Device.find_or_create_by(params[:device])
       # binding.pry
+      end
       @child.save
     redirect "/children/#{@child.id}"
   else
