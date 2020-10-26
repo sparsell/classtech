@@ -81,7 +81,7 @@ class ChildController < ApplicationController
     @child = Child.find(params[:id])
     if logged_in? && current_user.id == @child.user_id
       @child.destroy
-      flash[:message] = "You have successfully deleted this child's profile."
+      flash[:message] = "You have successfully deleted #{@child.name}'s profile."
     else
       flash[:message] = "You canont delete a child that does not belong to you."
     end
