@@ -64,9 +64,7 @@ class ChildController < ApplicationController
       @child.update(params[:child]) #update child's name
       # @child.devices << Device.find_or_create_by(params[:device_type])
       if !params[:device][:device_type].empty?
-        binding.pry
       @child.devices << Device.find_or_create_by(params[:device])
-      # binding.pry
       end
       @child.save
     redirect "/children/#{@child.id}"
