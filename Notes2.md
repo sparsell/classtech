@@ -8,20 +8,22 @@ Associations:
 - Check how validaitons will change ??
 
 Migrations / Database:
-- Create join table ChildrenDevices with each others' foreign keys
-- Remove 'child_id' from Devices
+[x] Create join table ChildrenDevices with each others' foreign keys
+[x] Remove 'child_id' from Devices
 
 Did it work?
-- Test relationships in 'tux'
-  -- want to do something like this: @child.device_types << device_type
+[x] Test relationships in 'tux'
 
 Controllers:
-- children/new
-- children/edit
-- grade/show
+[x] children/new
+[x] children/edit
+[x] grade/show
+[x] device/index
+- device/show (still not able to get child name for specific device view)
 
 Views:
-- Child new.erb
-- Child edit.erb
-- Child show.erb
-- Grade show.erb
+[x] Child new.erb
+[x] Child edit.erb
+[x] Child show.erb
+[x] Grade show.erb
+- Device show.erb (see above)
