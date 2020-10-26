@@ -3,12 +3,13 @@ Models:
 [x] Add ChildDevice class
 
 Associations:
-- Change associations in Device and Child
+[x] Change associations in Device and Child
 [x] Add associations in ChildDevice
 - Check how validaitons will change ??
 
-Database:
+Migrations / Database:
 - Create join table ChildrenDevices with each others' foreign keys
+- Remove 'child_id' from Devices
 
 Did it work?
 - Test relationships in 'tux'
