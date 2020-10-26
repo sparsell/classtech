@@ -10,9 +10,9 @@
 
     <ol>
         <% @devices.each do |device|%>
-        <li><%= device.device_type%></li>
+            <li><a class="child-list" href="/devices/<%= device.id%>"><%=device.device_type%></a></li>
         <% end %>
     </ol>
 
 </body>
-<html>
+</html>
