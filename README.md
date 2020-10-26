@@ -19,9 +19,9 @@ Installing
 Built With
  - <a href="https://rubygems.org/gems/sinatra">Sinatra</a>
  - <a href="https://rubygems.org/gems/activerecord">ActiveRecord</a>
- - <a href="https://rubygems.org/gems/activerecord">sqlite3</a>
- - <a href="https://rubygems.org/gems/activerecord">bcrypt</a>
- - <a href="https://rubygems.org/gems/activerecord">sinatra-flash</a>
+ - <a href="https://rubygems.org/gems/sqlite3">sqlite3</a>
+ - <a href="https://rubygems.org/gems/bcrypt">bcrypt</a>
+ - <a href="https://rubygems.org/gems/sinatra-flash">sinatra-flash</a>
  
 Contributing
 
