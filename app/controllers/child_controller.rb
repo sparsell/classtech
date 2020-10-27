@@ -15,15 +15,14 @@ class ChildController < ApplicationController
 
   post '/children' do
     if logged_in? 
-      # write a conditional to check if grade_id and user_id are present in params
       @child = Child.create(name: params[:child][:name], grade_id: params[:child][:grade_id], device_ids: params[:child][:device_ids], user_id: current_user[:id]) 
 
       #CREATE DEVICE:
       if !params[:device][:device_type].empty?
         @child.devices << Device.create(device_type: params[:device][:device_type])
       end
-
-      @child.save #do I not need this because I used .create and << ? 
+      
+      @child.save 
       redirect "/children/#{@child.id}"
     else
       flash[:message] = "You must be logged in to add a child."
