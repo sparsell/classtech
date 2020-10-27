@@ -17,8 +17,7 @@ Navigation:
 Child new.erb
 [x] Restrict duplication when creating a new device
 - Restrict a user from creating a child with the same name as one they already have
-- Restrict blanks when creating a new device
-- Persisting issues with devices (think it's from dodgy validation code...)
+[x] Restrict blanks when creating a new device
 
 Child show.erb
 [x] iteration not working to show child's devices 
@@ -30,18 +29,18 @@ Child show.erb
 Child edit.erb
 [x] name change persists
 [x] Device additions do not persist
-- Device changes (deletions) do not persist
+[x] Creating a "" for each child every time I edit (leave the space blank)
 
 Child delete action
-- not working (route is children/children/:id) in browser?? Why? 
+[x] not working (route is children/children/:id) in browser?? Why? 
 
 Grade show.erb
 [x] add each child's devices
 [x] style child links so user can see to click on them (same as grade index.erb styles)
-- currently not working - changing messaging to flash / or go back to this is erb file:
-     <% if @message %>%
-    <%= @message%>
-    <% end %> 
+- flash message not working; only getting message when go back to index page
+
+Device show.erb
+- flash message not working; only getting message when go back to index page
 
 Styling
-- general layout; may need wrapper for all elements in flexbox
+[x] general layout; may need wrapper for all elements in flexbox

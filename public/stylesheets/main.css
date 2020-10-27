@@ -99,8 +99,9 @@ footer.branding {
 .flash {
   margin: 1em;
   padding: 8px;
-  color: white; 
-  background:grey; 
+  color: #087e8b; 
+  font-style: italic;
+  /* background:grey;  */
 }
 
 /* HOME PAGE styles */

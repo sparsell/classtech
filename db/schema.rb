@@ -11,28 +11,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20201012183121) do
+ActiveRecord::Schema.define(version: 20201026100839) do
 
+  create_table "child_devices", force: :cascade do |t|
+    t.integer "child_id"
+    t.integer "device_id"
+  end
 
-  # I think the 'behaviors' should be their own class
   create_table "children", force: :cascade do |t|
     t.string  "name"
     t.integer "user_id"
     t.integer "grade_id"
-    t.boolean "has_limits" #move to tech_rule
-    t.boolean "can_text"  #move to tech_rule
-    t.boolean "can_chat"  #move to tech_rule
-    t.boolean "soc_media" #move to tech_rule
-    t.boolean "play_games"  #move to tech_rule
-    t.boolean "watch_yt"  #move to tech_rule
+    t.boolean "has_limits" #Stretch
+    t.boolean "can_text"   #Stretch
+    t.boolean "can_chat"   #Stretch
+    t.boolean "soc_media"  #Stretch
+    t.boolean "play_games" #Stretch
+    t.boolean "watch_yt"   #Stretch
   end
 
   create_table "devices", force: :cascade do |t|
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.string   "device_type"
-    t.integer  "child_id"
-    t.boolean  "limits"
+    t.boolean  "limits"   #not required but can't remove for some reason (migration hasn't workded)
   end
 
   create_table "grades", force: :cascade do |t|
