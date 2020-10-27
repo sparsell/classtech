@@ -23,63 +23,24 @@ Built With
  - <a href="https://rubygems.org/gems/bcrypt">bcrypt</a>
  - <a href="https://rubygems.org/gems/sinatra-flash">sinatra-flash</a>
  
-Contributing
-
-
-Authors
-- <a href="https://github.com/sparsell">Sonja Parsell</a>, Creator (while studying at Flatiron School's Software Engineering Program)
-
-License
-Acknowledgments
 Getting Started
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+- download or clone this project
+- cd into the classtech directory
+- run 'bundle install' in your terminal
+- run 'shotgun' in your terminal
+- open your favorite browser and enter the given local url provided by the shotgun server
 
-Prerequisites
-What things you need to install the software and how to install them
-
-Give examples
-Installing
-A step by step series of examples that tell you how to get a development env running
-
-Say what the step will be
-
-Give the example
-And repeat
-
-until finished
-End with an example of getting some data out of the system or using it for a little demo
-
-Running the tests
-Explain how to run the automated tests for this system
-
-Break down into end to end tests
-Explain what these tests test and why
-
-Give an example
-And coding style tests
-Explain what these tests test and why
-
-Give an example
-Deployment
-Add additional notes about how to deploy this on a live system
-
-Built With
-Contributor Covenant - Used for the Code of Conduct
-Creative Commons - Used to choose the license
-Contributing
-Please read CONTRIBUTING.md for details on our code of conduct, and the process for submitting pull requests to us.
-
-Versioning
-We use SemVer for versioning. For the versions available, see the tags on this repository.
-
-Authors
-Billie Thompson - Provided README Template - PurpleBooth
-See also the list of contributors who participated in this project.
+Author
+- <a href="https://github.com/sparsell">Sonja Parsell</a> (while studying at Flatiron School's Software Engineering Program)
 
 License
-This project is licensed under the CC0 1.0 Universal Creative Commons License - see the LICENSE.md file for details
+- ClassTech is available as open source under the terms of the MIT License
 
 Acknowledgments
-Hat tip to anyone whose code was used
+- Thanks to Flatiron coaches Dustin and Dwayne for your helpful office hours
+
+Code of Conduct
+- Everyone interacting in the Candidates project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the <a href="https://github.com/wifelette/candidates/blob/master/CODE_OF_CONDUCT.md">code of conduct</a>
+
 Inspiration
-etc
+- My Charlie-pops :) 
