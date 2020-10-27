@@ -29,6 +29,14 @@ leila = Child.create(name: "Leila", user_id: aya.id, grade_id: five.id)
     Device.create(device_type: "MacBook")
     Device.create(device_type: "PC")
     Device.create(device_type: "Desktop")
+
+    Rule.create(rule_name: "Has time limits")
+    Rule.create(rule_name: "Text")
+    Rule.create(rule_name: "Chat")
+    Rule.create(rule_name: "FaceTime")
+    Rule.create(rule_name: "Uses social media")
+    Rule.create(rule_name: "Plays games")
+    Rule.create(rule_name: "Watches YouTube")
     
 
 
