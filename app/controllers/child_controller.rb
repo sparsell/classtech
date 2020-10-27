@@ -35,8 +35,9 @@ class ChildController < ApplicationController
   #### READ ####
   get '/children' do
     @children = Child.all
-    erb :'/children/index'
-    # erb :'children/index' (but not showing all the kids to user...or could?)
+     redirect '/children/show'
+    # erb :'/children/index'
+    
   end
 
   get '/children/:id' do

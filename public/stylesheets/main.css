@@ -92,7 +92,7 @@ footer.branding {
   align-items: row;
   flex-flow: row wrap; 
   height: 100%;
-  padding: 15px;
+  padding: 2px;
   background:#fff;
 }
 
