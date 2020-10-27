@@ -5,7 +5,6 @@ Models:
 Associations:
 [x] Change associations in Device and Child
 [x] Add associations in ChildDevice
-- Check how validaitons will change ??
 
 Migrations / Database:
 [x] Create join table ChildrenDevices with each others' foreign keys
@@ -19,11 +18,11 @@ Controllers:
 [x] children/edit
 [x] grade/show
 [x] device/index
-- device/show (still not able to get child name for specific device view)
+[x] device/show
 
 Views:
 [x] Child new.erb
 [x] Child edit.erb
 [x] Child show.erb
 [x] Grade show.erb
-- Device show.erb (see above)
+[x] Device show.erb
