@@ -14,8 +14,7 @@ class GradeController < ApplicationController
             flash[:message] = "There aren't any children in this grade." 
             erb :'grades/show'
         else
+            erb :'grades/show'
         end
-        erb :'grades/show'
     end
-
 end

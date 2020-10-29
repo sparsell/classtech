@@ -8,11 +8,18 @@ class DeviceController < ApplicationController
 
     get '/devices/:id' do
         @device = Device.find(params[:id])
-        @children = @device.children  #array of all the kids with this device - from the join table
+        @children = @device.children 
+        # if @children.empty?
+        #     flash[:message] = "There aren't any children who have this type of device."
+        # end
+        # erb :'devices/show'
+
         if @children.empty?
             flash[:message] = "There aren't any children who have this type of device."
+            erb :'devices/show'
+        else
+            erb :'devices/show'
         end
-        erb :'devices/show'
         
     end
 
