@@ -20,45 +20,44 @@
   
  
     <div class="home-page-block">
-      <div class="logo">
-          <h1>Class Tech</h1>
-      </div>
-      <div class="nav">
-        <% if logged_in? %>
-        
-        <a href="/users/<%=current_user.id%>/profile">View your profile</a>
-          <a href="/grades">View by Grade</a>
-          <a href="/devices">View by Device</a>
-          <a href='/users/logout'>Logout</a>
-        <%end%>
-    </div> <!-- end nav -->
-    <br>
-    <div class="flash">
-      <% if flash[:message] %>
-          <h3><%= flash[:message] %></h3>
-      <% end %>
-    </div>
 
-  </div> <!-- end home-page-block -->
+        <div class="logo">
+            <h1>Class Tech</h1>
+        </div> <!-- end logo -->
+
+        <div class="nav">  <!-- only shows if logged in -->
+            <% if logged_in? %> 
+        
+              <a href="/users/<%=current_user.id%>/profile">View your profile</a>
+              <a href="/grades">View by Grade</a>
+              <a href="/devices">View by Device</a>
+              <a href='/users/logout'>Logout</a>
+            <%end%>
+        </div><br> <!-- end nav -->
+    
+        <div class="flash">
+            <% if flash[:message] %>
+              <h3><%= flash[:message] %></h3>
+            <% end %>
+        </div> <!-- end flash -->
+
+    </div> <!-- end home-page-block -->
        
   <div class="wrapper"> 
-    
-   
 
     <%= yield %>
-  
          
-    
 </div> <!-- end wrapper -->
+
 <div class="message">
     <q>You're not the only one in your grade who doesn't have a phone.</q>
     <p>- every parent, at least once in their life</p>
-  </div> <!-- end message  -->
+</div> <!-- end message  -->
 
-        <footer class="branding">
-            <small>&copy; 2020 <strong>Classtech</strong></small>
-        </footer>
-    </div> <!-- end branding -->
+<footer class="branding">
+    <small>&copy; 2020 <strong>Classtech</strong></small>
+</footer>
+     <!-- end wrapper -->
 
  
   </body>
