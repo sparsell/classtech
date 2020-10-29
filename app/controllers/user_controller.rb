@@ -13,7 +13,7 @@ class UserController < ApplicationController
                 @user.save 
                 redirect 'users/login'
             else
-                flash[:error] = "That user name is already taken. Please try again."
+                flash[:message] = "That user name is already taken. Please try again."
                 redirect '/users'
             end
         end
@@ -31,7 +31,7 @@ class UserController < ApplicationController
             session[:user_id] = @user.id
             redirect "/users/#{@user.id}"
         else
-            flash[:error] = "You must enter a valid user name and password to login. Please try again."
+            flash[:message] = "You must enter a valid user name and password to login. Please try again."
             redirect '/users/login'
         end
     end
