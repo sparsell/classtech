@@ -9,15 +9,11 @@
   <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Allerta+Stencil&display=swap" rel="stylesheet">
     <title>Classtech</title>
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
     <link rel="stylesheet" href="/stylesheets/main.css" />
   </head>
 
   <body>
-
-  
  
     <div class="home-page-block">
 
@@ -28,9 +24,10 @@
         <div class="nav">  <!-- only shows if logged in -->
             <% if logged_in? %> 
         
-              <a href="/users/<%=current_user.id%>/profile">View your profile</a>
-              <a href="/grades">View by Grade</a>
-              <a href="/devices">View by Device</a>
+              <a href="/users/<%=current_user.id%>/profile">Profile</a>
+              <a href="/grades">View Grades</a>
+              <a href="/devices">View Devices</a>
+              <a href="/rules">View Rules</a>
               <a href='/users/logout'>Logout</a>
             <%end%>
         </div><br> <!-- end nav -->
