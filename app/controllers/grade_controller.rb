@@ -11,7 +11,7 @@ class GradeController < ApplicationController
         @children = @grade.children
         @devices = Device.all
         if @children.empty?
-            flash[:message] = "There aren't any children in this grade." 
+            flash.now[:message] = "There aren't any children in this grade." 
             erb :'grades/show'
         else
             erb :'grades/show'
