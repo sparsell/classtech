@@ -17,12 +17,21 @@
             <h3>Grade: <%=@child.grade.grade%></h3><br> 
             
             <!-- Child's devices -->
-            <h3><%=@child.name%>'s devices:</h3>
+            <h3 style="color: red;"><%=@child.name%>'s devices:</h3>
             <!--show child's devices -->
                 <%@child.devices.each do |device|%><br>
                 <h3><%=device.device_type %></h3>
                 <%end%><br><br>
-                <!-- DELETE CHILD only if child belongs to current_user-->
+
+            <!-- Child's rules -->
+            <h3 style="color: red;"><%=@child.name%>'s screen time rules:</h3>
+            <!--show child's rules -->
+                <%@child.rules.each do |rule|%><br>
+                <h3><%=rule.rule_name %></h3>
+                <%end%><br><br>
+
+
+            <!-- DELETE CHILD only if child belongs to current_user-->
             <% if @child.user_id == session[:user_id]%>
             <form method="POST" action="/children/<%=@child.id%>">
                 <input type="hidden" name="_method" id="hidden" value="DELETE">

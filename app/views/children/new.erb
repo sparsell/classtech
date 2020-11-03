@@ -12,13 +12,14 @@
  
             <label for="name">Name:</label>
                 <input type="text" name="child[name]"> <br> <br>
-            
+            <!-- Child's grade: -->
             <label for="grade">Grade (choose one):</label> <br>
                 <% @grades.each do |grade| %><br>
                     <input type="radio" required name="child[grade_id]" id="grade_<%=grade.id%>" value="<%=grade.id%>">
                     <%=grade.grade%>
                 <% end %>  <br>  <br>
-           
+
+            <!-- Child's devices -->
             <label for="device">Select your child's devices: </label> <br>
                 <p>(If you don't see it, add a new one below.)</p>
                 <% @devices.each do |device| %><br>
@@ -29,6 +30,20 @@
         <h4>Add a New Device:</h4>
             <label for="device_type">Device Name:</label>
             <input type="text" name="device[device_type]"> <br> <br>
+            
+            <!-- Child's rules -->
+        <label for="rule">Select your child's screen time rules/uses:</label>
+            <% @rules.each do |rule| %><br> 
+                    <input type="checkbox" name="child[rule_ids][]" id="<%=rule.id%>" value="<%=rule.id%>">
+                    <%=rule.rule_name%>
+                <% end %>  <br><br> 
+
+                <!-- new rule -->
+                <h4>Add a New Rule:</h4>
+            <label for="rule_name">Rule Name:</label>
+            <input type="text" name="rule[rule_name]"> <br> <br> 
+            
+
             <input type="submit" value="Add Child">
     </form>
 </body>

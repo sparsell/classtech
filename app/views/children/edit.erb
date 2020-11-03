@@ -26,6 +26,14 @@
 
       <label for="device_type">New Device Name: </label><br>
         <input type="text" name="device[device_type]" id="device_type"><br><br>
+
+<h3>Update your child's rules</h3>
+
+      <% @rules.each do |rule| %>
+      <input type="checkbox" name="child[rule_ids][]" id="<%=rule.id%>" value="<%=rule.id%>" <%='checked' if @child.rules.include?(rule) %>>
+      <%= rule.rule_name %><br>
+      <% end %><br>
+
         <input type="submit" value="Update Child">
  
     </form> 
