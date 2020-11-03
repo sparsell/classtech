@@ -23,9 +23,9 @@ class UserController < ApplicationController
         erb :'/users/login' 
     end
 
-    post '/users/login' do #from login form params hash
-        #matches agains the existing entries in db
-        #if matching, signs in, or else redirect to signup
+    post '/users/login' do # from login form, params hash
+        # matches agains the existing entries in db.
+        # if matching, signs user in, or else redirects to signup
         @user = User.find_by(user_name: params[:user_name])
         if @user && @user.authenticate(params[:password])
             session[:user_id] = @user.id
@@ -47,8 +47,7 @@ class UserController < ApplicationController
     get '/' do
         erb :'index'
     end
-
-    # ???? What is convention here? Can I do this?  
+  
     get '/users/:id/profile' do 
         @user = User.find(params[:id])
         @children = @user.children

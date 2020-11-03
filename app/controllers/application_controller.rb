@@ -22,7 +22,7 @@ class ApplicationController < Sinatra::Base
   helpers do
   #returns a boolean if the user is logged in 
     def logged_in?
-        !!session[:user_id]
+        !!session[:user_id] #double bang converts the return value to boolean
     end
 
     #keeps track of the logged in user
