@@ -5,7 +5,7 @@ class ChildController < ApplicationController
     if logged_in? 
     @grades = Grade.all
     @devices = Device.all
-   
+    @rules = Rule.all
     erb :'children/new' 
     else
       flash[:message] = "Please log in first."
@@ -15,12 +15,18 @@ class ChildController < ApplicationController
 
   post '/children' do
     if logged_in? 
-      @child = Child.create(name: params[:child][:name], grade_id: params[:child][:grade_id], device_ids: params[:child][:device_ids], user_id: current_user[:id]) 
+      @child = Child.create(name: params[:child][:name], grade_id: params[:child][:grade_id], device_ids: params[:child][:device_ids], rule_ids: params[:child][:rule_ids], user_id: current_user[:id]) 
 
-      #CREATE DEVICE:
+      #CREATE NEW DEVICE:
       if !params[:device][:device_type].empty?
         @child.devices << Device.create(device_type: params[:device][:device_type])
       end
+
+      #CREATE NEW RULE:
+      if !params[:rule][:rule_name].empty?
+         @child.rules << Rule.create(rule_name: params[:rule][:rule_name])
+      end
+
       
       @child.save 
       redirect "/children/#{@child.id}"
@@ -40,6 +46,7 @@ class ChildController < ApplicationController
   get '/children/:id' do
     @child = Child.find(params[:id])
     @grades = Grade.all
+    @child.rules
     @child.devices
     erb :'/children/show' 
   end 
@@ -49,6 +56,7 @@ class ChildController < ApplicationController
   get '/children/:id/edit' do 
       @child = Child.find(params[:id])
       @devices = Device.all
+      @rules = Rule.all
         if logged_in? && current_user.id == @child.user_id
           erb :'children/edit'
         else
