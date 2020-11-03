@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+
+<head>
+<link href="https://fonts.googleapis.com/css2?family=Allerta+Stencil&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./public/stylesheets/main.css">
+</head>
+
+<body>
+
+    <ol>
+        <% @rules.each do |rule|%>
+            <li><a class="child-list" href="/rules/<%= rule.id%>"><%=rule.rule_name%></a></li>
+        <% end %>
+    </ol>
+
+</body>
+</html>

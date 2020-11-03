@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+
+<head>
+<link href="https://fonts.googleapis.com/css2?family=Allerta+Stencil&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./public/stylesheets/main.css">
+</head>
+
+<body>
+    
+    <div class="display-children-grade">
+   
+        
+            <h3><%=@rule.rule_name%></h3><br>
+                <% @children.each do |child|%>
+                    <li><%=child.name%></li>
+                    <%end%>           
+       
+    </div> <!--end display-children-grade -->
+</body>
+
+</html>
